@@ -138,7 +138,7 @@ For development, customization, or private deployment:
 
 ```bash
 # Clone the repository
-git clone https://github.com/epu-ntua/BuildON-SRI-Tools.git
+git clone https://github.com/BuildON-EPU/BuildON-SRI-Tools
 cd BuildON-SRI-Tools
 
 # Start SRI Calculator
@@ -462,7 +462,7 @@ of this software and associated documentation files...
 
 **Project Resources**:
 - **Live Demo**: [https://sri.buildon.epu.ntua.gr/](https://sri.buildon.epu.ntua.gr/)
-- **Repository**: [https://github.com/epu-ntua/BuildON-SRI-Tools](https://github.com/epu-ntua/BuildON-SRI-Tools)  
+- **Repository**: [https://github.com/BuildON-EPU/BuildON-SRI-Tools](https://github.com/BuildON-EPU/BuildON-SRI-Tools)  
 
 ---
 
