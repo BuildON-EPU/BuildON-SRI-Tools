@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Welcome to SMURF Tool!
+{% endblock %}
+
+{% block content %}
+
+<section class="jumbotron">
+    <div class="container">
+        <h1 class="display-4" style="color: mediumslateblue;">Welcome to SMURF Assessment Tool!</h1>
+        <p class="lead" style="color: #353531">The Smart Buildings Readiness (SMURF) Assessment Tool enables the evaluation of SRI in different scenarios, considering the potential adoption of energy efficiency measures and technologies.</p>
+        <br>
+        <div class="col-md-6 mx-auto text-center"> <!-- Increase the width of the container -->
+            <form action="" method="post" enctype="multipart/form-data" class="mb-3">
+                {% csrf_token %}
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="csvFile" name="csvFile" required accept=".csv" onchange="updateFileName(this)" style="background-color: #D4D3FB; color: #353531;">
+                    <!--<label class="custom-file-label" for="csvFile" style="color: black;">Choose CSV file...</label>-->
+                {% if form.csvFile.errors %}
+                <div class="text-danger mt-2">
+                    {{ form.csvFile.errors.0 }}
+                </div>
+                {% endif %}
+                <br>
+                <br>
+                <div>
+                    <a href="{% static 'smurf_web_app/sample.csv' %}" download="sample.csv" class="btn btn-secondary btn-lg sample-csv-button">Sample CSV</a>
+                    <button type="submit" class="btn btn-primary btn-lg" style="background-color: mediumslateblue;" onmouseover="this.style.backgroundColor='#4243C6'" onmouseout="this.style.backgroundColor='mediumslateblue'">Upload CSV</button>
+
+                    <!-- <button type="submit" class="btn btn-primary btn-lg" style="background-color: mediumslateblue; hover: background-color: #4243C6;">Upload CSV</button> -->
+                </div>
+            </form>
+        </div>   
+        <!-- Add the Sample CSV button here -->
+        <script>
+            function updateFileName(input) {
+                const fileName = input.files[0].name;
+                const label = input.nextElementSibling;
+                label.innerText = fileName;
+            }
+        </script>  
+    </div>
+</section>
+
+<section id="Service_Overview">
+    <div class="container">
+        <!-- Include the service overview content here -->
+    </div>
+</section>
+
+<section id="Scenarios">
+    <div class="container">
+        <!-- Include the scenarios content here -->
+    </div>
+</section>
+
+<section id="About">
+    <div class="container">
+        <!-- Include the about content here -->
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extrastyles %}
+    {{ block.super }}
+    <style>
+        /* Add custom styles for specific elements */
+        .jumbotron h1.display-4,
+        .jumbotron p.lead {
+            color: mediumslateblue; /* Set color to mediumslateblue */
+        }
+        /* Increase the width of the file input field */
+        .custom-file-input {
+            cursor: pointer;
+            border: 2px solid #D4D3FB;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%; /* Set the width to 100% to make it wider */
+            background-color: #D4D3FB; /* Set background color to a lighter shade */
+            color: #353531; /* Set text color to a darker shade */
+        }
+        /* Style the file input label */
+        .custom-file-label {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .proceed-button {
+            background-color: mediumslateblue;
+            border: none;
+            margin-top: 5px; /* Add space between input field and button */
+            color: white; /* Set text color to white */
+            padding: 10px 20px; /* Add padding to the button */
+        }
+        .proceed-button:hover {
+            background-color: #4243C6;
+        }
+        .sample-csv-button {
+            background-color: #474744;
+            border: none;
+            margin-top: 10px; /* Add space between input field and button */
+            color: #353531; /* Set text color */
+            padding: 10px 20px; /* Add padding to the button */
+        }
+        .sample-csv-button:hover {
+            background-color: #353531;
+            color: #fff; /* Change text color on hover */
+        }
+    </style>
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+{% block content %}
+<style>
+    .text-green {
+        color: #5C5DFC !important;
+    }
+    .bg-white {
+        background-color: #fff !important;
+    }
+    .text-black {
+        color: #4a5568 !important;
+    }
+    .card-about {
+        font-size: 18px !important;
+        color: #4a5568 !important;
+        line-height: 1.6 !important;
+        /* text-align: center !important; */
+    }
+</style>
+<section id="Service_Overview" style="padding-top: 70px;">
+    <div class="container">
+        <div class="card custom-card bg-white text-green">
+            <div class="card-body">
+                <h2 class="card-title">About the SMURF Assessment Tool:</h2>
+                <ul class="card-about text-black">
+                <li>The <b>Smart Buildings Readiness (SMURF) Assessment Tool</b> enables the evaluation of the Smart Readiness Indicator (SRI) across different upgrade scenarios by considering the potential integration of <b>smart technologies</b>.</li> 
+                <li>It provides <b>quantified assessments</b> of each scenario by estimating the <b>impact of specific upgrades on the SRI score</b>, including changes in functionality levels and the use of advanced building systems such as smart thermostats, automated controls, and monitoring equipment.</li>
+                <li>In addition to technical evaluation, the tool presents the <b>estimated cost</b> of each proposed upgrade, supporting a clear comparison of <b>cost-effectiveness</b> between alternatives.</li>
+                <li>SMURF is designed to assist <b>building owners and users, facility managers, energy auditors</b>, and other stakeholders in making <b>informed decisions</b> during construction or renovation, aiming to maximize SRI gains while managing investment levels.</li>
+                </ul>
+            </div>    
+        </div>
+    </div>
+</section>    
+{% endblock %}

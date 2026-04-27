@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: sri-calculator-react-dashboard
+    build:
+      context: ./sri-frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./sri-frontend/src:/app/src
+    ports:
+      - "3003:3000"
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    networks:
+      - sri-net
+
+
+  backend:
+    container_name: sri-calculator-backend-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "8003:8000"
+    environment:
+      - DATABASE_URL=postgresql://admin:admin!@db:5432/buildon_sri_db
+      - SECRET_KEY=your_secret_key
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - sri-net
+
+  db:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin!
+      POSTGRES_DB: buildon_sri_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5553:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d buildon_sri_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sri-net
+
+
+volumes:
+  postgres-data:
+
+networks:
+  sri-net:
+    external: true

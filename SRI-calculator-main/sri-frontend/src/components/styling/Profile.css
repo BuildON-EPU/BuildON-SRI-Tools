@@ -1,0 +1,344 @@
+/* ===== Global Layout ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== Fixed Header (Changed from Sticky) ===== */
+.profile-header,
+.login-header {
+    position: fixed; /* Changed from sticky to fixed */
+    top: 0;
+    left: 0; /* Add left and width to ensure it spans full width */
+    width: 100%; /* Ensure it spans full width */
+    z-index: 1000; /* Increased z-index to ensure it's on top */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===== Logo and Branding ===== */
+.profile-logo,
+.home-logo {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.profile-logo:hover,
+.home-logo:hover {
+    transform: scale(1.05);
+}
+
+.title-section {
+    flex: 1;
+}
+
+.brand-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    background: linear-gradient(135deg, #5C5DFC, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.brand-subtitle {
+    font-size: clamp(14px, 2vw, 18px);
+    color: #6b7280;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* ===== User Info ===== */
+.profile-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.profile-user-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile-username {
+    font-size: 18px;
+    font-style: italic;
+    margin-right: 10px;
+    color: #1f2937;
+}
+
+.profile-user-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.profile-user-button:hover {
+    opacity: 0.85;
+}
+
+.profile-user-details {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 10;
+    text-align: center;
+    min-width: 220px;
+    animation: float 0.5s ease-in-out;
+}
+
+.profile-user-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.profile-logout-button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #5C5DFC, #667eea);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.profile-logout-button:hover {
+    background: linear-gradient(135deg, #4f50e8, #5a6fd8);
+}
+
+/* ===== Main Layout ===== */
+.profile-main {
+    margin-left: 120px; /* Adjust this based on the width of the fixed menu */
+    flex: 1;
+    padding: 55px;
+    margin-top: 0px !important;
+}
+
+
+/* ===== Sidebar ===== */
+.profile-menu {
+    position: fixed;
+    /* Adjust top to be below the fixed header + some margin if desired */
+    top: 120px + 10px; /* Header height (110px) + 20px margin */
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: 2px solid #ccc;
+    padding-right: 20px;
+    margin-right: 20px;
+    height: calc(100vh - (120px + 10px +10px)); /* 100vh - header height - top margin */
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.profile-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3cap;
+}
+
+.profile-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 15px 10px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-button:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.profile-button-text {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+/* ===== Welcome Content ===== */
+.profile-welcome {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.profile-welcome-title {
+    font-size: clamp(26px, 5vw, 36px);
+    color: #ffffff;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.profile-welcome-text {
+    font-size: 20px;
+    color: #e2e8f0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* ===== Cards ===== */
+.profile-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.profile-description-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 48%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #1f2937;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-description-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.profile-description-card h2 {
+    color: #5C5DFC;
+    margin-bottom: 15px;
+}
+
+.profile-description-card p {
+    font-size: 18px;
+    color: #374151;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* ===== Animations ===== */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .profile-main {
+        flex-direction: column;
+        padding: 20px;
+        padding-top: calc(20px + 70px + 20px + 20px); /* Adjust padding-top for mobile */
+    }
+
+    .profile-menu {
+        position: relative; /* Change back to relative for mobile */
+        top: 0;
+        left: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        height: auto;
+        margin-right: 0;
+        border-right: none;
+    }
+
+    .profile-button {
+        width: auto;
+        height: auto;
+        padding: 12px;
+    }
+
+    .profile-welcome {
+        padding-left: 0;
+        margin-top: 30px;
+    }
+
+    .profile-card-container {
+        flex-direction: column;
+        margin: 0 20px;
+    }
+
+    .profile-description-card {
+        max-width: 100%;
+    }
+
+    .profile-user-details {
+        top: 60px;
+        right: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Ensure no extra white space at the bottom */
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+

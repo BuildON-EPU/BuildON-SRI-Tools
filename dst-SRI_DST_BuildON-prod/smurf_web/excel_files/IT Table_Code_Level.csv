@@ -1,0 +1,341 @@
+SRI-ENACT intervention technology;Code;Functionality level
+Honeywell Home RTH5160D1003 Simple Display Non-Programmable Thermostat ;H-1d;Level 1 
+;H-4;Level 1
+;C-1d;Level 1
+;C-4;Level 1
+;MC-3;Level 1
+Google Nest Learning Thermostat (single thermostat);H-1a ;Level 1 
+;H-3;Level 2
+;H-4;Level 3
+;C-1a ;Level 1
+;C-3;Level 2
+;C-4;Level 2
+;DHW-1b;Level 1
+;E-12;Level 4
+;MC-9;Level 1
+Google Nest Learning Thermostat (multiple thermostats);H-1a ;Level 4 
+;H-3;Level 2
+;H-4;Level 3
+;C-1a ;Level 4
+;C-3;Level 2
+;C-4;Level 2
+;DHW-1b;Level 1
+;E-12;Level 4
+;MC-9;Level 1
+Honeywell T9 Smart Thermostat (single thermostat);H-1a ;Level 1 
+;H-3;Level 1
+;H-4;Level 2
+;C-1a ;Level 1
+;C-3;Level 2
+;C-4;Level 2
+;MC-4;Level 1
+;MC-9;Level 1
+Honeywell T9 Smart Thermostat (multiple thermostats);H-1a ;Level 4 
+;H-3;Level 1
+;H-4;Level 2
+;C-1a ;Level 4
+;C-3;Level 2
+;C-4;Level 2
+;MC-4;Level 1
+;MC-9;Level 1
+Ecobee SmartThermostat (single thermostat);H-1a ;Level 1
+;H-2a;Level 2
+;C-1a ;Level 1
+;V-1a ;Level 3
+;E-12;Level 4
+;MC-3;Level 3
+;MC-4;Level 2
+;MC-9;Level 2
+;MC-13;Level 3
+;MC-25;Level 2
+;MC-29;Level 2
+;MC-30;Level 3
+Ecobee SmartThermostat (multiple thermostats);H-1a ;Level 4
+;H-2a;Level 2
+;C-1a ;Level 4
+;V-1a ;Level 3
+;E-12;Level 4
+;MC-3;Level 3
+;MC-4;Level 2
+;MC-9;Level 2
+;MC-13;Level 3
+;MC-25;Level 2
+;MC-29;Level 2
+;MC-30;Level 3
+Sunamp Thermino 150 e Heat Battery;H-1f;Level 3
+;DHW-1a;Level 2
+;C-1g;Level 2
+;E-3;Level 2
+;E-8;Level 3
+;E-11;Level 2
+;MC-3;Level 2
+;MC-25;Level 1
+Ice Energy Ice Bear 20 ;C-1g;Level 3
+;C-4;Level 3
+;E-5;Level 2
+;MC-28;Level 2
+Steffes Comfort Plus Forced Air Furnace Model 4120;H-1a ;Level 1
+;H-1f;Level 2
+;H-2b ;Level 1
+;E-5;Level 1
+;MC-13 ;Level 2
+;MC-30;Level 1
+Bosch Greenstar 100-P Combi;H-1a ;Level 1
+;H-1c;Level 1
+;H-2a ;Level 1
+;H-2d ;Level 1
+;H-3;Level 1
+;DHW-1a;Level 1
+;DHW-1b;Level 2
+;DHW-3;Level 1
+Daikin VRV IV S-Series ;H-1a ;Level 2
+;H-1c;Level 2
+;H-2b ;Level 3
+;C-1a ;Level 2
+;C-1b;Level 3
+;C-1c;Level 2
+;C-1d;Level 2
+;C-1f;Level 2
+;C-2a;Level 3
+Danfoss ECL Comfort;H-1b;Level 2 
+;H-1c;Level 1
+;H-1d;Level 3
+;H-2a;Level 1
+;H-2d;Level 3
+;DHW-1a;Level 1
+;DHW-1b;Level 1
+;C-1b;Level 2
+;C-1c;Level 2
+;C-1d;Level 3
+;C-1g;Level 1
+;C-2a;Level 3
+Belimo Energy Valve;H-1a;Level 2 
+;H-1b;Level 2 
+;H-1c;Level 2
+;H-1d;Level 3
+;H-2a;Level 1
+;H-2b;Level 1
+;H-2d;Level 1
+;H-3;Level 1
+;DHW-1a;Level 1
+;DHW-2b;Level 1
+;C-1a;Level 2
+;C-1b;Level 2
+;C-1c;Level 2
+;C-1d;Level 3
+;C-2b;Level 2
+;C-3;Level 1
+;V-1c;Level 4
+Viessmann Vitocell 300-V;H-1f;Level 1 
+;DHW-1a;Level 1
+;DHW-1b;Level 1
+;DHW-1d;Level 1
+Bosch Compress 7000i AW;H-1b;Level 3
+;H-1c;Level 2 
+;H-2b;Level 3 
+;H-2d;Level 2 
+;H-4;Level 3 
+;DHW-1b;Level 2
+;C-2a;Level 3 
+;C-2b;Level 3 
+;C-3;Level 4 
+;C-4;Level 3 
+Grundfos MAGNA3 ;H-1d;Level 4 
+;H-2a;Level 1 
+;H-3;Level 1 
+;DHW-1a;Level 1
+;DHW-1b;Level 1
+;C-1d;Level 4 
+Bosch Thermotechnology - Bosch TR200;H-3;Level 3 
+;H-4;Level 3 
+;MC-3;Level 3 
+;MC-4;Level 2 
+;MC-13;Level 2 
+;MC-25;Level 2 
+Daikin Altherma 3;H-1a;Level 3 
+;H-1c;Level 2 
+;H-2b;Level 3 
+;H-4;Level 4 
+;DHW-1a;Level 2 
+;DHW-2b;Level 3 
+;DHW-3;Level 3 
+;C-1a;Level 3 
+;C-2a;Level 3 
+Fujitsu General Waterwaste;H-2a;Level 2 
+;H-2b;Level 2 
+;H-4;Level 2 
+;DHW-1b;Level 2 
+;DHW-1d;Level 2 
+;DHW-2b;Level 2 
+Mitsubishi Electric PUMY-SP Series;C-1b;Level 3 
+;C-1d;Level 2 
+;C-1f;Level 1 
+;C-2a;Level 1
+;C-2b;Level 1
+Siemens RVD250-A district heating controller;H-1c ;Level 2 
+;DHW-1a;Level 3
+;DHW-1b;Level 3
+;DHW-1d;Level 3
+;MC-4;Level 3
+;;
+Apricus ETC-30 solar collector;DHW-1d;Level 2
+Kamstrup Multical 603;DHW-3;Level 4
+Panasonic FV-25ZY1G Energy Recovery Ventilator;V-1a ;Level 4 
+;V-1c;Level 3
+;V-2c;Level 1 
+;V-2d;Level 2
+;V-3;Level 2
+;V-6;Level 3
+Broan AI Series 110 CFM Heat Recovery Ventilator;C-1a ;Level 3
+;V-1a;Level 4
+;MC-13;Level 1 
+Panasonic FV-10VE2 Intelli-Balance 100 Energy Recovery Ventilator;V-1a ;Level 2 
+;V-1c;Level 3
+;V-2d;Level 2 
+;V-3;Level 2
+;V-6;Level 3
+Fantech VHR 70R ES Fresh Air Appliance Heat Recovery Ventilator;V-1a;Level 2
+;V-1c;Level 1
+;V-2c;Level 1 
+;V-2d;Level 2
+;V-3;Level 2
+;V-6;Level 2
+Lifebreath 155MAX Heat Recovery Ventilator;V-1a ;Level 1
+;V-1c;Level 1
+;V-2c;Level 2
+;V-2d;Level 1
+;V-3;Level 1
+;V-6;Level 2
+Zehnder ComfoAir Flex 250;V-1a ;Level 3
+;V-1c;Level 3
+;V-2c;Level 2
+;V-2d;Level 1
+;V-3;Level 3
+;V-6;Level 1
+Lutron Caséta Wireless Smart Lighting Kit (manual dimming) ;L-1a ;Level 1
+;L-2;Level 1
+;MC-9;Level 1
+Lutron Caséta Wireless Smart Lighting Kit (automatic dimming) ;L-1a ;Level 1
+;L-2;Level 2
+;MC-9;Level 1
+Schneider Electric Clipsal C-Bus;L-1a ;Level 3 
+;L-2;Level 4
+;MC-9;Level 1
+;MC-30;Level 2
+ABB 6131/31-24-500 Busch-Presence detector premium ;H-1a ;Level 3 
+;C-1a;Level 3
+;L-1a;Level 2
+;L-2;Level 2
+;V-6;Level 1
+;MC-9;Level 1
+Somfy Animeo IB+ 4 AC Motor Controller (without sensors);DE-1;Level 1
+;DE-4;Level 1
+Somfy Animeo IB+ 4 AC Motor Controller (with sun sensors);DE-1;Level 2
+;DE-4;Level 3
+Somfy Animeo IB+ 4 AC Motor Controller (with window sensors);DE-1;Level 1
+;DE-2;Level 1
+;DE-4;Level 2
+Somfy Animeo IB+ 4 AC Motor Controller (with window & temperature sensors);DE-1;Level 1
+;DE-2;Level 2
+;DE-4;Level 3
+Somfy Animeo IB+ 4 AC Motor Controller (with sun, window, temperature, and occupancy sensors);DE-1;Level 4
+;DE-2;Level 3
+;DE-4;Level 4
+Sense Energy Monitor ;E-2;Level 2
+;E-12;Level 1
+Efergy Elite Classic;E-12;Level 3
+;V-6;Level 2
+Residential Photovoltaic System: Kostal Plenticore Plus 3 Inverter + Trina Solar TSM375DEO8M.08 Photovoltaic Panels;E-2;Level 3 
+;E-4;Level 2
+;MC-25;Level 1
+;MC-28;Level 2
+;MC-29;Level 1
+Residential Photovoltaic System with Storage: Kostal Plenticore Plus 3 Inverter + Trina Solar TSM375DEO8M.08 Photovoltaic Panels + LG Energy Solution Enblock FLEX 8.6 kWh Battery Storage System;E-2;Level 3 
+;E-3;Level 3
+;E-4;Level 2
+;E-8;Level 1
+;E-11;Level 4
+;MC-25;Level 1
+;MC-28;Level 2
+;MC-29;Level 1
+Residential Photovoltaic System with Storage: Kostal Plenticore Plus 3 Inverter + Trina Solar TSM375DEO8M.08 Photovoltaic Panels + LG Chem RESU 10 kWh Battery Storage System;E-2;Level 3 
+;E-3;Level 2
+;E-4;Level 3
+;E-8;Level 2
+;E-11;Level 4
+;MC-25;Level 2
+;MC-28;Level 2
+;MC-29;Level 4
+Residential Photovoltaic System with Storage: Kostal Plenticore Plus 3 Inverter + Trina Solar TSM375DEO8M.08 Photovoltaic Panels + Enphase Encharge 10kWh Battery Storage System;E-2;Level 3 
+;E-3;Level 4
+;E-4;Level 3
+;E-8;Level 3
+;E-11;Level 3
+;MC-25;Level 2
+;MC-28;Level 2
+;MC-29;Level 4
+Residential Photovoltaic System with Storage: Kostal Plenticore Plus 3 Inverter + Trina Solar TSM375DEO8M.08 Photovoltaic Panels + LG Chem RESU 6.5 kWh Battery Storage System;E-2;Level 3 
+;E-3;Level 1
+;E-4;Level 3
+;E-8;Level 2
+;E-11;Level 1
+Residential Photovoltaic System: Fronius Symo 3.0-3 Inverter + Trina Solar TSM375DEO8M.08 Photovoltaic Panels ;E-2;Level 1 
+;E-3;Level 1
+;MC-28;Level 1
+Kostal Wallbox EV charger;EV-15;Level 4, if the examined asset is a single-family house
+;;
+;;Level 3, if the examined asset is a small multi-family house or non-residential
+;;Level 2, if the examined asset is a large multi-family house or non-residential
+;EV-16;Level 1
+;EV-17;Level 2 
+Electric Car Charger Type 2 - Schuko (220V);EV-15;Level 1
+;EV-17;Level 1 
+Wallbox Quasar bidirectional EV charger;EV-15;Level 4, if the examined asset is a single-family house
+;;
+;;Level 3, if the examined asset is a small multi-family house or non-residential
+;;Level 2, if the examined asset is a large multi-family house or non-residential
+;EV-16;Level 2
+;EV-17;Level 2 
+;MC-29;Level 3
+Siemens RDF600KN Flush mount KNX room thermostat;H-1a;Level 3
+;C-1a;Level 3 
+Siemens RDS110 Smart Room Thermostat;H-1a;Level 4
+;C-1a;Level 4 
+Siemens RVL482 Heating controller for boiler temperature control for modulating or 2-stage burners with d.h.w. heating;H-1a;Level 2
+;H-2a;Level 2
+;H-2b;Level 2
+;DHW-1a;Level 3
+;DHW-1b;Level 3
+;DHW-1d;Level 3
+Siemens RMU710B-1 Universal controller ;H-1c;Level 2
+;H-2d;Level 4
+;C-1c;Level 2
+;C-2a;Level 2
+;C-2b;Level 4
+;DHW-2b;Level 4
+;V-1a;Level 4
+;V-1c;Level 3
+;V-2c;Level 2
+;V-2d;Level 3
+Siemens UH50-A74-00 Ultrasonic heat meter, RS-485(MS/TP) BACnet module, WZU5- 2815 pair of temperature sensors;H-3;Level 4
+ ;C-3;Level 4
+;DHW-3;Level 4
+Siemens G120P-3/35B Variable Speed Drive, G120P-IP55-PAN-EXT, G120P-AIRSHEET-FSA, G120P-IOP-2-BT Intelligent operator panel;H-1d;Level 3
+;C-1d;Level 3
+;C-2a;Level 2
+Siemens WFW636.D110 Electronic impeller type hot water meter, M-bus radio communication, S-mode, WTT662-BA1100 Network node;DHW-3;Level 2
+Siemens UP258D51 Presence Detector WIDE multi with temperature, humidity, and CO2 measurement, IR remote control ;H-1a;Level 3
+;C-1a;Level 3
+;L-1a;Level 4
+;L-2;Level 4
+;V-6;Level 1
+Siemens RLM162 Air duct temperature controller ;V-1a;Level 2
+;V-1c;Level 3
+;V-2d;Level 4
+Siemens N543D51 Solar protection actuator, 8xAC230V, 6A, with end position detection;DE-1;Level 3
+;DE-2;Level 3
+EcoStruxure Panel Server – universal wireless, concentrator Modbus gateway 110-277 VAC/DC, iEM3155 energy meter -63A- Modbus;E-2;Level 4
+;E-4;Level 3
+;E-8;Level 1
+;E-11;Level 4
+;E-12;Level 2

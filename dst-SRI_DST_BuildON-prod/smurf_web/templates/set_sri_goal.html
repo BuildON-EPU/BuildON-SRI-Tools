@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% block title %}Set your SRI Goal{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+    .text-green {
+        color: #5C5DFC !important;
+    }
+    .bg-white {
+        background-color: #fff !important;
+    }
+</style>
+<section id="Service_Overview" style="padding-top: 70px;">
+    <div class="container">
+        <div class="card custom-card bg-white text-green">
+            <div class="card-body">
+                <h1 class="card-title">Welcome to SMURF Assessment Tool!</h1>
+                <h5 class="card-text">The Smart Buildings Readiness (SMURF) Assessment Tool enables the evaluation of SRI in different scenarios, considering the potential adoption of energy efficiency measures and technologies.</h5>
+            </div>
+        </div>
+        <br>
+        <!-- Set the text color to white for this specific element -->
+        <div class="card custom-card bg-white">
+            <div class="card-body">
+                <span id="serviceOverviewTitle" class="mt-5"><h5>Here is an overview of the services present in your building:</h5></span>
+                <!-- Center the table on the page -->
+                <div class="table-responsive mx-auto"> <!-- Added 'mx-auto' class for centering -->
+                    <!-- Add the 'rounded' class to make the table rounded -->
+                    <table id="servicesTable" class="table table-bordered table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Service Name</th>
+                                <th>Domain</th>
+                                <th>Functionality</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for service in data.services %}
+                            <tr>
+                                <td>{{ service.service }}</td>
+                                <td><span class="badge bg-secondary">{{ service.domain }}</span></td>
+                                <td>{{ service.functionality }}</td>
+                                <td>{{ service.level }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody> 
+                    </table>
+                </div>
+            </div>
+        </div>         
+        <!-- Two cards side by side with the same height -->
+        <div class="card-deck">
+            {% if data.input_sri >= 90 %}
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-A mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-A-text">Your SRI Class is A</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_A.png' %}" alt="Class A Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            {% elif data.input_sri >= 80 %}
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-B mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-B-text">Your SRI Class is B</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_B.png' %}" alt="Class B Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>  
+            {% elif data.input_sri >= 65 %}
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-C mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-C-text">Your SRI Class is C</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_C.png' %}" alt="Class C Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            {% elif data.input_sri >= 50 %}
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-D mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-D-text">Your SRI Class is D</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_D.png' %}" alt="Class D Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            {% elif data.input_sri >= 35 %}  
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-E mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-E-text">Your SRI Class is E</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_E.png' %}" alt="Class E Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            {% elif data.input_sri >= 20 %}  
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-F mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-F-text">Your SRI Class is F</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_F.png' %}" alt="Class F Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card custom-card bottom-cards text-center">
+                <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                    <span class="sri-score class-G mb-3">Your current SRI score is {{ data.input_sri }}%</span>
+                    <p class="mb-3 class-G-text">Your SRI Class is G</p>
+                    <div class="centered-image mb-3">
+                        <img src="{% static 'smurf_web_app/images/class_G.png' %}" alt="Class G Image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            {% endif %}              
+            <div class="card custom-card bottom-cards">
+                <div class="card-body d-flex align-items-center justify-content-center"> <!-- Added 'd-flex align-items-center justify-content-center' -->
+                    <form class="form-inline" method="post">
+                        {% csrf_token %}
+                        <div class="row justify-content-center"> <!-- Centering the row -->
+                            <div class="col-md-7 mb-3">
+                                <label for="sri_goal_input" class="form-label" style="color: #5C5DFC; font-weight: bold;">Enter your SRI goal %:</label>
+                            </div>
+                            <div class="col-md-3 mb-3"> <!-- Adjusting column width -->
+                                <input type="number" class="form-control" name="sri_goal" id="sri_goal_input" min="{{ data.0.input_sri|add:'1' }}" max="100">
+                            </div>
+                            <div class="col-md-7"> <!-- Adjusting column width -->
+                                <button type="submit" class="btn btn-primary proceed-button">Proceed</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>             
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,6 @@
+user,input_sri,building_type,zone,service,level,domain
+99,40,Residential,North Europe,H-1a,0,Heating
+99,40,Residential,North Europe,H-1b,2,Heating
+99,40,Residential,North Europe,DHW-1a,1,Domestic hot water
+99,40,Residential,North Europe,C-1a,1,Cooling
+99,40,Residential,North Europe,L-2,3,Lighting

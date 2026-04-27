@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  smurf_web:
+    hostname: smurf_web
+    container_name: smurf_web
+    restart: always
+    ports:
+      - 8001:8001
+    build:
+      context: ".."
+      dockerfile: config/Dockerfile
+    networks:
+      - sri-net  # Connect to shared network with FastAPI
+
+networks:
+  sri-net:
+    external: true

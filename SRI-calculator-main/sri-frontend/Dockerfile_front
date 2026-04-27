@@ -1,0 +1,53 @@
+# Frontend Dockerfile
+# FROM node:16-alpine as build
+
+# # Set the working directory inside the container
+# WORKDIR /app
+
+# # Copy package.json and package-lock.json/yarn.lock into the container
+# COPY package.json yarn.lock ./
+
+# # Install the dependencies
+# RUN yarn install
+
+# # Copy the rest of the application source code into the container
+# COPY . .
+
+# # Build the application
+# RUN yarn build
+
+# # Stage 2: Serve the app using Nginx
+# FROM nginx:alpine
+
+# # Copy the built files from the previous stage to the nginx html folder
+# COPY --from=build /app/build /usr/share/nginx/html
+
+# # Expose port 80
+# EXPOSE 80
+
+# # Start nginx server
+# CMD ["nginx", "-g", "daemon off;"]
+
+# Step 1: Build the React app
+FROM node:16-alpine AS build
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json (if using npm)
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Build the React app
+RUN npm run build
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]

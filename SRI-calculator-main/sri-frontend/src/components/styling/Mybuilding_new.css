@@ -1,0 +1,961 @@
+/* Use the same styles as in Profile.css for consistency */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 120px; /* Add margin to prevent content from being hidden behind the fixed header */
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #f6f6f6;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+
+.profile-logo {
+  height: 70px;
+  margin-right: 20px;
+}
+
+.profile-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-main-title {
+  font-size: 36px;
+  color: #5C5DFC;
+  margin: 0;
+}
+
+.profile-subtitle {
+  font-size: 18px;
+  color: #5C5DFC;
+  margin: 0;
+}
+
+.profile-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding-right: 20px;
+}
+
+.profile-user-info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profile-username {
+  font-size: 20px;
+  font-style: italic;
+  margin-right: 10px;
+}
+
+.profile-user-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.profile-user-button:hover {
+  opacity: 0.8;
+}
+
+.profile-user-details {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 10;
+  text-align: center;
+}
+
+.profile-logout-button {
+  background-color: white;
+  color: #5C5DFC;
+  border: 2px solid #5C5DFC;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.profile-logout-button:hover {
+  background-color: #5C5DFC;
+  color: white;
+}
+
+.profile-main {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+}
+
+/* .profile-menu {
+  flex: 0.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 2px solid #ccc;
+  padding-right: 20px;
+  margin-right: 20px;
+  position: fixed;
+} */
+
+.profile-welcome {
+  flex: 2.2;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.profile-welcome-title {
+  font-size: 32px;
+  color: #5C5DFC;
+  margin-bottom: 20px;
+}
+
+.profile-welcome-subtitle {
+  font-size: 24px;
+  margin-top: 0px;
+  margin-left: 40px;
+}
+
+.profile-container .building-form-container {
+  margin-right: 50px;
+  max-width: 100px; /* Set a maximum width for the form */
+  width: 50%; /* Ensure it doesn't exceed 100% of the container */
+  padding: 0 15px;    /* Optional: Add some padding to make the form look more balanced */
+}
+
+.building-form-title {
+    font-size: clamp(26px, 5vw, 36px);
+    color: #ffffff;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+/* Increased specificity by adding parent classes */
+.profile-container .building-form {
+  width: 100% !important;
+  background:  #f5f5f5 !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px !important;
+  border-radius: 15px !important;
+}
+
+.profile-container .building-form label {
+  display: block !important;
+  text-align: left !important;
+  margin-bottom: 5px !important;
+  color: black !important;
+  font-size: 15px !important;
+}
+
+.profile-container .building-form input,
+.profile-container .building-form select {
+  border: 2px solid rgb(223, 223, 223) !important;
+  border-radius: 20px !important;
+  color: rgb(0, 0, 0) !important;
+  padding: 10px !important;
+  margin-bottom: 15px !important;
+  width: 100% !important;
+  background-color: white !important; /* Ensures no green background */
+}
+
+.profile-container .view-sri-button {
+  background-color: #5C5DFC !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 15px !important;
+  font-size: 18px !important; /* Increase font size on hover */
+  cursor: pointer !important;
+  width: 100px !important;
+  height: 50px !important;
+  margin-top: 20px !important; /* Add margin on top to maintain button shape */
+}
+
+.profile-container .view-sri-button:hover {
+  width: 15%; /* Increase width on hover */
+  background-color: #4343fd !important; /* Change background color on hover */
+  color: white !important; /* Ensure text color stays white */
+  border-radius: 25px !important; /* Rounder corners on hover */
+  padding: 15px !important; /* Increase padding on hover */
+  font-size: 18px !important; /* Increase font size on hover */
+  margin-top: 20px !important; /* Add margin on top to maintain button shape */
+}
+
+.profile-container .view-sri-button-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%; /* Ensures the container takes the full width */
+  margin-top: 20px !important; /* Adjust if needed for spacing */
+}
+
+/*domain styles */
+
+.profile-container .domain-view-sri-button {
+  background-color: #5C5DFC !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 15px !important;
+  font-size: 18px !important; /* Increase font size on hover */
+  cursor: pointer !important;
+  width: 100px !important;
+  height: 50px !important;
+  margin-top: 20px !important; /* Add margin on top to maintain button shape */
+}
+  
+.profile-container .domain-view-sri-button:hover {
+  width: 15%; /* Increase width on hover */
+  background-color: #4343fd !important; /* Change background color on hover */
+  color: white !important; /* Ensure text color stays white */
+  border-radius: 25px !important; /* Rounder corners on hover */
+  padding: 15px !important; /* Increase padding on hover */
+  font-size: 18px !important; /* Increase font size on hover */
+  margin-top: 20px !important; /* Add margin on top to maintain button shape */
+}
+
+/* Updated Container Styling for the Card */
+.profile-container .ui.card {
+  background:  #ffffff !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px !important;
+  max-width: 700px; /* Adjust this value to your desired width */
+  width: 100%; /* Ensure it scales with the container */
+  margin: 20px auto; /* Center the card and add some top/bottom margin */
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for better visual effect */
+}
+
+.profile-container .domain-grid {
+  background-color: #f5f5f5 !important;
+  border: 1px solid #f5f5f5 !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 18px !important;
+  color: black !important;
+  padding: 10px !important;
+  border-radius: 10px;
+  display: flex !important; /* Use flexbox for horizontal alignment */
+  justify-content: space-between !important; /* Ensure spacing between text and slider */
+  align-items: center !important; /* Center items vertically */
+  max-width: 500px; /* Reduce the max width */
+  margin: 5px auto !important; /* Center the grid with auto margins */
+}
+
+.profile-container .domain-grid .domain-name {
+  flex: 3; /* Give more space to the domain name */
+  text-align: left; /* Align the text to the right */
+  padding-right: 20px; /* Add some spacing to the right */
+  padding-left: 20px; /* Add some spacing to the right */
+
+}
+
+.profile-container .domain-grid .domain-button-container {
+  flex: 1; /* Less space for the button container */
+  text-align: left; /* Align the button to the left */
+}
+
+/* Toggle switch styling */
+.ui.toggle.checkbox input:checked~.box:before {
+  background-color: #5C5DFC !important; /* Selected toggle color */
+}
+
+.ui.toggle.checkbox input:not(:checked)~.box:before {
+  background-color: rgb(223, 223, 223) !important; /* Default (unselected) toggle color */
+}
+
+/* Toggle border color */
+.ui.toggle.checkbox input:checked~.box {
+  border-color: #5C5DFC !important;
+}
+
+.ui.toggle.checkbox input:not(:checked)~.box {
+  border-color: rgb(223, 223, 223) !important;
+}
+
+.profile-container .domain-button {
+  border: 2px solid black !important;
+  border-radius: 50% !important;
+  padding: 10px 20px;
+  color: white !important;
+  background-color: black !important;
+}
+
+.profile-container .ui.card .domain-view-sri-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensures the container takes the full width */
+  margin-top: 20px !important; /* Adjust if needed for spacing */
+}
+ 
+.profile-container .content-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Space between domain menu and services */
+  width: 100%;
+  max-width: 1500px; /* Increase the maximum width as needed */
+}
+
+.service-menu {
+  flex: 0 0 240px; /* Fixed width for the menu */
+}
+
+.services-area {
+  flex: 1;
+  max-width: 1500px; /* Limit the width of the services area */
+}
+
+.services-form {
+  border: 1px solid #ccc !important;
+  border-radius: 10px !important;
+  padding: 20px !important;
+  max-height: 500px !important;
+  width: 100% !important;
+  overflow-y: auto !important;
+  position: relative !important;
+  margin-top: 0px !important;
+  background-color: white !important;
+}
+
+.service-container {
+  border: 1px solid black !important;
+  margin-bottom: 10px !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+  background-color: white !important;
+}
+
+.service-header {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.service-description {
+  font-weight: bold !important;
+}
+
+.service-checkbox .ui.toggle.checkbox input:checked~.box:before,
+.service-checkbox .ui.toggle.checkbox input:checked~label:before {
+  background-color: green !important;
+}
+
+.levels-form {
+  background-color: rgb(236, 236, 236) !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  margin-top: 10px !important;
+}
+
+.level-checkbox .ui.checkbox input:checked~.box:before,
+.level-checkbox .ui.checkbox input:checked~label:before {
+  background-color: green !important;
+}
+
+.service-view-sri-button {
+  background-color: #5C5DFC !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 15px !important;
+  font-size: 18px !important; /* Increase font size on hover */
+  cursor: pointer !important;
+  width: 100px !important;
+  height: 50px !important;
+  margin-top: 20px !important; /* Add margin on top to maintain button shape */
+  margin: 16px auto 0 auto !important; 
+  display: block !important;
+}
+  
+.service-view-sri-button:hover {
+  width: 15%; /* Increase width on hover */
+  background-color: #4343fd !important; /* Change background color on hover */
+  color: white !important; /* Ensure text color stays white */
+  border-radius: 25px !important; /* Rounder corners on hover */
+  padding: 15px !important; /* Increase padding on hover */
+  font-size: 18px !important; /* Increase font size on hover */
+  margin-top: 20px !important; /* Add margin on top to maintain button shape */
+}
+
+/* SRI Page */
+
+/* .info-card {
+  font-size: 18px !important; 
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  height: 75% !important;
+  margin: 10px 20px !important;
+  background-color: #f9f9f9;
+  color: black !important;
+} */
+
+/* .total-sri-score {
+  font-size: 20px !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 20px !important;
+  width: 50% !important;
+  height: 75% !important;
+  border-radius: 10px !important;
+  background-color: #f5f5f5 !important;
+  color: #474744 !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+} */
+
+
+.sri-score-page {
+  padding: 20px !important;
+  text-align: center !important;
+}
+
+.header-section {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+}
+
+.logo-title {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.logout-button {
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 1.5rem !important;
+  cursor: pointer !important;
+}
+
+/* .info-cards {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+} */
+
+
+
+
+/* .detailed-scores-table {
+  margin: auto !important;
+  width: 80% !important;
+  text-align: center !important;
+  background: #f9f9f9 !important;
+  border: 4.5px solid rgb(223, 223, 223) !important;
+  margin-bottom: 20px !important;
+} */
+
+.bold-text {
+  font-weight: bold !important;
+  background-color: white !important;
+}
+
+/* .horizontal-container {
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: flex-start !important;
+  margin-top: 20px !important;
+  border: 2px solid rgb(223, 223, 223) !important;
+  margin-bottom: 20px !important;
+} */
+
+/* .scores-charts-container {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  margin: 0 10px !important;
+} */
+
+/* .scores-table {
+  margin-bottom: 20px !important;
+  border: 2px solid rgb(223, 223, 223) !important;
+  background: #f9f9f9 !important;
+  padding: 10px !important;
+} */
+
+/* .chart-space {
+  flex: 2 !important;
+  border: 2px solid rgb(223, 223, 223) !important;
+  height: 300px !important;
+} */
+
+/* .srf-scores-container {
+  margin-top: 20px !important;
+  border: 2px solid rgb(223, 223, 223) !important;
+  background: #f9f9f9 !important;
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+} */
+
+/* .small-table {
+  margin: auto !important;
+  width: 100% !important;
+  margin-bottom: 20px !important;
+}
+
+.small-table .bold-text {
+  font-weight: bold !important;
+} */
+
+.sri-building-button {
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: black;
+color: white;
+border: 4px solid transparent;
+border-radius: 10px;
+padding: 10px;
+cursor: pointer;
+width: 90px;
+height: 90px;
+}
+
+.sri-building-button:hover {
+opacity: 0.8;
+}
+
+/* .building-class {
+margin-top: 15px;
+
+} */
+
+/* Custom styles for the table header
+.building-table thead th {
+  /* background-color: #5C5DFC !important; /* Set your desired background color */
+  /* color: white !important; Set the text color */
+  /* font-weight: bold !important; Make the text bold */
+  /* text-align: center !important; Center-align the text */
+/* } */ 
+
+
+.profile-container .view2-sri-button {
+  display: flex !important;  /* Flex display to center the content inside */
+  justify-content: center !important;  /* Center content horizontally */
+  align-items: center !important;  /* Center content vertically */
+  margin: 0 !important;  /* Remove any default margins that could misalign it */
+  background-color: #5C5DFC !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  font-size: 12px !important; /* Increase font size on hover */
+  cursor: pointer !important;
+  width: 80px !important;
+  height: 40px !important;
+  margin-top: 10px !important; /* Add margin on top to maintain button shape */
+}
+
+.profile-container .view2-sri-button:hover {
+  width: 15%; /* Increase width on hover */
+  background-color: #4343fd !important; /* Change background color on hover */
+  color: white !important; /* Ensure text color stays white */
+  border-radius: 25px !important; /* Rounder corners on hover */
+  font-size: 12px !important; /* Increase font size on hover */
+  margin-top: 10px !important; /* Add margin on top to maintain button shape */
+}
+
+/* General Table Styles */
+.building-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove gaps between borders */
+  font-family: Arial, sans-serif; /* Ensure font consistency */
+  font-size: 14px; /* Readable font size */
+  margin: 0; /* Remove margins */
+}
+
+/* Header Styling */
+.building-table thead th {
+  background-color: #5C5DFC; /* Blue header background */
+  color: white; /* White text for headers */
+  font-weight: bold;
+  text-align: center; /* Center-align the header text */
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+
+/* Table Body Styling */
+.building-table tbody td {
+  padding: 12px;
+  text-align: center !important; /* Center align all text */
+  border-bottom: 1px solid #ddd; /* Light border between rows */
+}
+
+.building-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+.building-table tbody tr:nth-child(even) {
+  background-color: #ffffff; /* White for even rows */
+}
+
+.building-table tbody tr:hover {
+  background-color: #e0e0e0; /* Light gray hover effect */
+}
+
+/* Padding for the last header cell */
+.rdt_TableHeadRow div.rdt_TableCol:last-child {
+  padding-right: 20px;
+}
+
+/* Pagination Styling */
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.pagination-controls {
+  list-style: none;
+  display: flex;
+}
+
+.pagination-controls li {
+  margin: 0 5px;
+}
+
+.pagination-controls a {
+  text-decoration: none;
+  color: #5C5DFC;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.pagination-controls a:hover {
+  background-color: #5C5DFC;
+  color: white;
+}
+
+.sticky-column {
+  position: sticky !important;
+  left: 0 !important;
+  z-index: 1 !important; /* Ensure the column stays above the other columns when scrolling */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1) !important; /* Optional: adds a subtle shadow effect */
+}
+
+.rdt_TableBody {
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modern SRI Dashboard Styles */
+
+
+.profile-menu {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: fit-content;
+}
+
+
+/* Modern Card Styles */
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  padding: 32px !important;
+  transition: all 0.3s ease !important;
+  height: auto !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+.info-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.info-card .header {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #2d3748 !important;
+  margin-bottom: 16px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.info-card .meta {
+  font-size: 16px !important;
+  color: #4a5568 !important;
+  margin-bottom: 8px !important;
+  font-weight: 500 !important;
+}
+
+.total-sri-score {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  text-align: center !important;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+  border: none !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.total-sri-score:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4) !important;
+}
+
+.building-class {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  opacity: 0.9 !important;
+}
+
+
+/* Modern Table Styles */
+.detailed-scores-title {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-align: center !important;
+  margin: 48px 0 32px 0 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.detailed-scores-table {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+  margin: 0 auto 40px auto !important;
+  width: 90% !important;
+}
+
+.detailed-scores-table thead th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 20px 16px !important;
+  border: none !important;
+  font-size: 14px !important;
+}
+
+.detailed-scores-table tbody td {
+  padding: 16px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  color: #2d3748 !important;
+  font-weight: 500 !important;
+}
+
+.detailed-scores-table tbody tr:hover {
+  background-color: rgba(102, 126, 234, 0.05) !important;
+}
+
+.bold-text {
+  font-weight: 700 !important;
+  color: #2d3748 !important;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+}
+
+/* Modern Chart Container Styles */
+.horizontal-container {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  padding: 32px !important;
+  margin: 0 auto 40px auto !important;
+  width: 90% !important;
+}
+
+.scores-charts-container {
+  display: flex !important;
+  gap: 32px !important;
+  /* align-items: flex-start !important; */
+  align-items: stretch !important; /* Stretch child elements to match heights */
+  /* height: 500px;  */
+}
+
+.scores-table {
+  flex: 0 0 300px !important;
+  background: rgba(248, 250, 252, 0.8) !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+}
+
+.scores-table h4 {
+  color: #2d3748 !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  margin-bottom: 20px !important;
+  text-align: center !important;
+}
+
+.chart-space {
+  flex: 1 !important;
+  background: white !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+  min-height: 500px !important;
+  height: 100% !important;
+}
+
+.small-table {
+  background: white !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+}
+
+.small-table tbody td {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  color: #4a5568 !important;
+  font-weight: 500 !important;
+}
+
+.small-table .bold-text {
+  background: rgba(102, 126, 234, 0.1) !important;
+  color: #2d3748 !important;
+  font-weight: 700 !important;
+}
+
+.srf-scores-container {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  padding: 32px !important;
+  margin: 0 auto 40px auto !important;
+  width: 90% !important;
+}
+
+.srf-scores-container h4 {
+  color: #2d3748 !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .scores-charts-container {
+    flex-direction: column !important;
+  }
+  
+  .scores-table {
+    flex: none !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-main {
+    flex-direction: column;
+  }
+  
+  .profile-menu {
+    flex: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .profile-welcome {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .detailed-scores-table,
+  .horizontal-container,
+  .srf-scores-container {
+    width: 95% !important;
+  }
+}
+
+/* Animation for smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Improved focus states for accessibility */
+.profile-button:focus,
+.service-view-sri-button:focus {
+  outline: 2px solid rgba(102, 126, 234, 0.5);
+  outline-offset: 2px;
+}

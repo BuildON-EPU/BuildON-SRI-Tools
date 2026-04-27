@@ -1,0 +1,731 @@
+/* Modern SMURF Upgrade Scenarios Styles - Aligned with SRI Calculator */
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* Modern Header Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.navbar-logo {
+    max-width: 200px;
+    height: auto;
+    filter: brightness(1.1);
+}
+
+.nav-link {
+    color: #2d3748 !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea !important;
+    transform: translateY(-1px);
+}
+
+.about-link {
+    color: #2d3748 !important;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.about-link:hover {
+    color: #667eea !important;
+    transform: translateY(-1px);
+}
+
+/* Content Area */
+.content {
+    margin-top: 100px;
+    flex: 1;
+    padding: 20px;
+}
+
+/* Modern Title Styles */
+#upgradeScenariosTitle {
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    text-align: center !important;
+    margin: 32px 0 24px 0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+#upgradeScenariosDescription {
+    font-size: 18px !important;
+    color: white !important;
+    text-align: center !important;
+    margin-bottom: 32px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    opacity: 0.9 !important;
+}
+
+/* Modern Scenario Tabs Container */
+.scenario-tabs-container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 24px !important;
+    margin-bottom: 32px !important;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Modern Sort Buttons */
+.nav-tabs {
+    border-bottom: none !important;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+    justify-content: center;
+    gap: 16px;
+}
+
+.sort-button {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    color: #2d3748 !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap;
+    margin: 0 !important;
+}
+
+.sort-button:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%) !important;
+    color: #667eea !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2) !important;
+}
+
+.sort-button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Modern Chart Container */
+/* Modern Chart Container - Fixed sizing issues */
+.chart-container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 32px !important;
+    margin-bottom: 32px !important;
+    transition: all 0.3s ease !important;
+    min-height: 400px !important;
+    position: relative !important;
+}
+
+.chart-container:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Ensure canvas takes full container size */
+.chart-container canvas {
+    width: 100% !important;
+    height: 350px !important;
+    max-width: 100% !important;
+    max-height: 350px !important;
+}
+
+/* Fix for hidden chart containers */
+.chart-container.d-none {
+    display: none !important;
+}
+
+.chart-container:not(.d-none) {
+    display: block !important;
+}
+
+/* Ensure proper chart rendering when switching tabs */
+.chart-container canvas {
+    visibility: visible !important;
+}
+
+/* Force chart reflow when becoming visible */
+.chart-container {
+    contain: layout style !important;
+}
+
+/* Modern Scenario Tabs */
+#upgradeTabs {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px 20px 0 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 20px 20px 0 20px !important;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+#upgradeTabs .nav-item {
+    margin-right: 8px !important;
+    margin-bottom: 0 !important;
+}
+
+.scenario-link-green {
+    background: rgba(102, 126, 234, 0.1) !important;
+    color: #2d3748 !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 12px 20px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+}
+
+.scenario-link-green:hover {
+    background: rgba(102, 126, 234, 0.2) !important;
+    color: #667eea !important;
+    transform: translateY(-2px) !important;
+}
+
+.scenario-link-green.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Modern Tab Content */
+.tab-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 0 0 20px 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-top: none !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 32px !important;
+    margin-top: 0 !important;
+    margin-bottom: 32px !important;
+    transition: all 0.3s ease !important;
+    border-radius: 20px !important;
+}
+
+/* Modern Table Styles */
+.table {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    margin-bottom: 24px !important;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 20px 16px !important;
+    border: none !important;
+    font-size: 14px !important;
+    text-align: center !important;
+}
+
+.table tbody td {
+    padding: 16px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    color: #2d3748 !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05) !important;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(248, 250, 252, 0.5) !important;
+}
+
+/* Modern Badge Styles */
+.badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 6px 12px !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+}
+
+/* Modern Card Styles */
+.card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 24px !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 24px !important;
+}
+
+.card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-deck {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 24px !important;
+    margin: 32px 0 !important;
+}
+
+/* Modern Button Styles */
+.proceed-button {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(72, 187, 120, 0.3) !important;
+}
+
+.proceed-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(72, 187, 120, 0.4) !important;
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%) !important;
+}
+
+/* Modern DataTables Styling */
+.dataTables_wrapper {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+}
+
+.dataTables_filter input[type="search"] {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    color: #2d3748 !important;
+    font-weight: 500 !important;
+}
+
+.dataTables_filter input[type="search"]:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.dataTables_length {
+    display: none !important;
+}
+
+.dataTables_info {
+    display: none !important;
+    color: #4a5568 !important;
+    font-weight: 500 !important;
+}
+
+.dataTables_paginate .paginate_button {
+    background: rgba(102, 126, 234, 0.1) !important;
+    border: 1px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 8px !important;
+    color: #667eea !important;
+    font-weight: 500 !important;
+    margin: 0 2px !important;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background: rgba(102, 126, 234, 0.2) !important;
+    color: #667eea !important;
+}
+
+.dataTables_paginate .paginate_button.current {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+}
+
+/* Export Buttons */
+.buttons-copy, .buttons-excel, .buttons-print {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    color: #2d3748 !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    margin: 0 4px !important;
+}
+
+.buttons-copy:hover, .buttons-excel:hover, .buttons-print:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-color: transparent !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* SRI Score Styles */
+.sri-score {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
+}
+
+.sri-score.class-A, .sri-score.class-B, .sri-score.class-C, 
+.sri-score.class-D, .sri-score.class-E, .sri-score.class-F, 
+.sri-score.class-G {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.class-A-text, .class-B-text, .class-C-text, 
+.class-D-text, .class-E-text, .class-F-text, 
+.class-G-text {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+}
+
+.centered-image {
+    max-width: 120px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Modern Footer */
+footer {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05) !important;
+    margin-top: auto !important;
+    padding: 20px 0 !important;
+}
+
+.centered-footer {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    filter: brightness(1.05) !important;
+}
+
+
+/* Animation for smooth transitions */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Improved focus states for accessibility */
+.proceed-button:focus,
+.sort-button:focus,
+.scenario-link-green:focus {
+    outline: 2px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 2px;
+}
+
+/* Modern Modal/Popup Positioning - Position near table top */
+/* .modal {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding-top: 100px !important;
+}
+
+.modal-dialog {
+    margin: 0 auto !important;
+    transform: none !important;
+    position: relative !important;
+    top: 0 !important;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+} */
+
+/* Alternative positioning for Bootstrap modals */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out !important;
+    transform: translateY(-50px) !important;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0) !important;
+}
+
+/* Ensure popup appears above other content */
+.modal {
+    z-index: 1055 !important;
+}
+
+.modal-backdrop {
+    z-index: 1050 !important;
+}
+
+.jumbotron {
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+}
+/* Adjust the footer positioning */
+footer {
+    background-color: #f6f6f6;
+    color: #000000;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+/* Add style for the text */
+#upgradeScenariosTitle,
+#upgradeScenariosDescription {
+    color: black;
+}
+/* Add style for the table and round the corners */
+#servicesTable {
+    border-radius: 10px; /* Add rounded corners to the table */
+    overflow: hidden; /* Hide any overflowing content */
+}
+/* Style the pill badges */
+.badge {
+    border-radius: 20px; /* Make the pill badges more rounded */
+}
+/* Ensure cards have the same height */
+.card-deck {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    justify-content: space-between; /* Add space between cards */
+    margin: 0 -5px 20px -5px; /* Add margin to create spacing between cards */
+}
+.card {
+    background-color: #f5f5f5; /* Light background color */
+    border: 1px solid #ddd; /* Add a subtle border */
+    border-radius: 10px; /* Round corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+.card:hover {
+    transform: translateY(-5px); /* Move card slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+/* Style for the SRI score text */
+.sri-score {
+    font-weight: bold;
+    color: #5C5DFC;
+    font-size: 22px; /* Increase the font size */
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Center text vertically */
+}
+/* Style for the Proceed button */
+.proceed-button {
+    background-color: #5C5DFC;
+    border: none;
+}
+.proceed-button:hover {
+    background-color: #4343fd;
+}
+/* Style for the upgrade tabs */
+.upgrade-tab-content {
+    padding: 20px;
+}
+/* Style for the failure tabs */
+.failure-tab-content {
+    padding: 20px;
+}
+/* Center align text in the table */
+table {
+    text-align: center;
+}
+/* Make table headings white */
+.table thead th {
+    color: #fff;
+    text-align: center !important;
+}
+/* Add custom styles for scenario success links */
+.nav-tabs .nav-item .nav-link.scenario-link-green,
+.nav-tabs .nav-item .nav-link.scenario-link-green:visited,
+.nav-tabs .nav-item .nav-link.scenario-link-green:active {
+    color: #5C5DFC !important; /* Set text color to green */
+    font-weight: bold;
+}
+/* Add custom styles for scenario failure links */
+.nav-tabs .nav-item .nav-link.scenario-link-red,
+.nav-tabs .nav-item .nav-link.scenario-link-red:visited,
+.nav-tabs .nav-item .nav-link.scenario-link-red:active {
+    color: #5C5DFC !important; /* Set text color to red */
+    font-weight: bold;
+}
+/* Add curves to the bottom corners of the tab content */
+.tab-content {
+    border-radius: 0 0 10px 10px; /* Add curves to the bottom corners of the tab content */
+    background-color: #fff; /* Set a background color for the tab content */
+    padding: 20px; /* Adjust padding as needed */
+    flex: 1; /* Fill the available vertical space */
+    margin-top: -20px; /* Adjust this value to control the spacing */
+    margin-bottom: 20px; /* Add space between tab content and footer */
+    border: 1px solid #ddd; /* Add a subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+/* Style the scenario tabs container */
+.scenario-tabs-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent tabs from wrapping to the next line */
+    max-width: 100%; /* Ensure the container takes full width */
+    margin: 0; /* Remove margin to eliminate space between tabs and content */
+    margin-bottom: 20px; /* Add space between tab container and footer */
+}
+/* Style the individual tabs */
+.nav-tabs .nav-item {
+    display: inline-block; /* Display tabs in a row */
+    margin-right: 0; /* Remove margin between tabs */
+    margin-bottom: 0px; /* Remove bottom margin */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+/* Ensure that the tabs take up the full width of the container */
+.nav-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 0px; /* Remove extra space below tabs */
+}
+/* Change color of DataTables buttons to light grey */
+.buttons-copy, .buttons-excel, .buttons-print {
+    background-color: rgb(188, 188, 188) !important;
+    border-color: rgb(188, 188, 188) !important;
+    color: white !important;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transition effect */
+}
+/* Add hover effect */
+.buttons-copy:hover, .buttons-excel:hover, .buttons-print:hover {
+    background-color: grey !important; /* Change to a darker grey on hover */
+    border-color: grey !important;
+}
+/* Hide DataTables Info element */
+.dataTables_info {
+    display: none;
+}
+.table thead th {
+    background-color: #5C5DFC;
+    text-align: center;
+}
+/* Add space at the top to prevent content from hiding behind the navbar */
+.content {
+    margin-top: 80px;
+}
+.navbar-logo {
+    max-width: 220px;
+    height: auto;
+    margin-right: 0px;  
+}
+/* CSS for centering the image */
+.centered-image {
+    margin: auto;
+    max-width: 150px;
+    height: auto;
+}
+.centered-footer {
+    margin: auto;
+    max-width: 700px;
+    height: auto;
+}
+/* Placeholder styles for SRI classes */
+.sri-score.class-A {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-A-text {
+    color: rgb(41, 140, 66);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-B {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-B-text {
+    color: rgb(110, 162, 72);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-C {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-C-text {
+    color: rgb(182, 207, 41);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-D {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-D-text {
+    color: rgb(251, 185, 29);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-E {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-E-text {
+    color: rgb(255, 163, 87);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-F {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-F-text {
+    color: rgb(218, 88, 8);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-G {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-G-text {
+    color: rgb(231, 77, 77);
+    font-weight: bold;
+    font-size: 20px;
+}

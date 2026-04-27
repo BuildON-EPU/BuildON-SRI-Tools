@@ -1,0 +1,99 @@
+cff-version: 1.2.0
+title: 'BuildON SRI Tools: Digital Tools for SRI Calculation and Smart Building Upgrade Planning'
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - family-names: Papias
+    given-names: Ioannis
+    email: gpapias@epu.ntua.gr
+    affiliation: >-
+      Decision Support Systems Laboratory, School of
+      Electrical & Computer Engineering, National
+      Technical University of Athens, Greece
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+  - family-names: Xenakis
+    given-names: Alexandros
+    affiliation: >-
+      Decision Support Systems Laboratory, School of
+      Electrical & Computer Engineering, National
+      Technical University of Athens, Greece
+  - family-names: Karoutsou
+    given-names: Dimitra
+    affiliation: >-
+      Decision Support Systems Laboratory, School of
+      Electrical & Computer Engineering, National
+      Technical University of Athens, Greece
+  - family-names: Dimitropoulos
+    given-names: Nikos
+    affiliation: >-
+      Decision Support Systems Laboratory, School of
+      Electrical & Computer Engineering, National
+      Technical University of Athens, Greece
+  - family-names: Arsenopoulos
+    given-names: Apostolos
+    affiliation: >-
+      Decision Support Systems Laboratory, School of
+      Electrical & Computer Engineering, National
+      Technical University of Athens, Greece
+  - family-names: Marinakis
+    given-names: Vangelis
+    affiliation: >-
+      Decision Support Systems Laboratory, School of
+      Electrical & Computer Engineering, National
+      Technical University of Athens, Greece
+repository-code: 'https://github.com/epu-ntua/BuildON-SRI-Tools'
+url: 'https://github.com/epu-ntua/BuildON-SRI-Tools'
+abstract: >-
+  The Smart Readiness Indicator (SRI) provides a harmonised
+  framework for assessing how effectively buildings use
+  smart technologies to improve energy performance,
+  occupant comfort, and grid flexibility. This repository
+  contains two integrated tools: (i) an SRI Calculator that
+  automates the end-to-end SRI assessment workflow and
+  visualises results across domains, impact criteria, and
+  key functionalities, and (ii) the Smart Building
+  Readiness (SMURF) Assessment Tool, which transforms
+  baseline SRI assessments into costed upgrade scenarios
+  aligned with user-defined targets. The tools are
+  integrated through a web-based workflow that enables
+  continuity from assessment to upgrade planning.
+keywords:
+  - Smart Readiness Indicator
+  - smart buildings
+  - building automation
+  - decision support
+  - retrofit planning
+  - upgrade scenarios
+  - cost-effectiveness
+  - energy flexibility
+  - building assessment
+  - SRI
+  - building smartness
+license: MIT
+version: 1.0.0
+date-released: '2025-04-27'
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Papias
+      given-names: Ioannis
+      email: gpapias@epu.ntua.gr
+    - family-names: Xenakis
+      given-names: Alexandros
+    - family-names: Karoutsou
+      given-names: Dimitra
+    - family-names: Dimitropoulos
+      given-names: Nikos
+    - family-names: Arsenopoulos
+      given-names: Apostolos
+    - family-names: Marinakis
+      given-names: Vangelis
+  title: >-
+    From Assessment to Action: Digital Tools for SRI
+    Calculation and Smart Building Upgrade Planning
+  journal: SoftwareX
+  year: 2025
+  publisher:
+    name: Elsevier

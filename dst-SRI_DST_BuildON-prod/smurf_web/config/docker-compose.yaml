@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  smurf_web:
+    hostname: smurf_web
+    container_name: smurf_web
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      # - "traefik.http.routers.smurf_web_web.rule=Host(`sri.buildon.epu.ntua.gr`) && PathPrefix(`/dss`)"
+      - "traefik.http.routers.smurf_web_web.rule=Host(`sri.buildon.epu.ntua.gr`) && PathPrefix(`/smurf`)"
+      - "traefik.http.routers.smurf_web.entrypoints=https"  # Use the HTTPS entrypoint
+      - "traefik.http.routers.smurf_web.tls=true"  # Enable TLS for this route
+    ports:
+      - "8004:8001"
+    networks:
+      - sri-net
+    build:
+      context: ".."
+      dockerfile: config/Dockerfile
+
+
+networks:
+  sri-net:
+    external: true

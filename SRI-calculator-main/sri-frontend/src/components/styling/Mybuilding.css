@@ -1,0 +1,713 @@
+.building-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .building-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: white;
+  }
+  
+  .logo-title-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .building-logo {
+    height: 140px;
+    margin-right: 40px;
+  }
+  
+  .building-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .building-main-title {
+    font-size: 34px;
+    color: rgb(84, 192, 84);
+    margin: 0;
+  }
+  
+  .building-subtitle {
+    font-size: 24px;
+    color: rgb(84, 192, 84);
+    margin: 0;
+  }
+  
+  .building-vertical-line {
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to bottom, green, orange);
+    position: absolute;
+    left: 150px; /* Adjust the position based on your layout */
+  }
+  
+  .sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    margin-top: 20px;
+  }
+  
+  .building-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    margin-top: 200px;
+    margin-left: 30px;
+  }
+  
+  .building-button:hover {
+    opacity: 0.8;
+  }
+  
+  .building-right {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative; /* Ensure relative positioning for absolute children */
+  }
+  
+  .building-user-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .building-username {
+    font-size: 20px;
+    font-style: italic;
+    margin-right: 10px; /* Add margin to separate username and button */
+  }
+  
+  .building-user-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  
+  .building-user-button:hover {
+    opacity: 0.8;
+  }
+  
+  .building-user-details {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 10;
+    text-align: center;
+    width: 200px; /* Set width for the popup */
+  }
+  
+  .building-user-email {
+    margin-bottom: 10px; /* Add margin to separate email and button */
+  }
+  
+  .building-logout-button {
+    background-color: white;
+    color: green;
+    border: 2px solid green;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .building-logout-button:hover {
+    background-color: green;
+    color: white;
+  }
+  
+  .building-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .building-welcome-title {
+    font-size: 32px;
+    color: green;
+    margin-bottom: 20px;
+    margin-right: 150px;
+  }
+
+  .building-welcome-subtitle {
+    font-size: 20px;
+    color: green;
+    margin-bottom: 20px;
+    margin-right: 150px;
+  }
+  
+  .building-divider {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, black, grey);
+    margin-bottom: 80px;
+    margin-right: 20px;
+  }
+  
+  .building-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-right: 400px;
+  }
+  
+  .building-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .building-button-text {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .green-text {
+    color: green;
+  }
+  
+  .orange-text {
+    color: orange;
+  }
+  
+  .purple-text {
+    color: purple;
+  }
+  
+  .building-my-buildings {
+    margin-top: 30px;
+    border-color: green;
+  }
+  
+  .my-account {
+    border-color: orange;
+  }
+  
+  .building-add-building {
+    margin-top: 30px;
+    border-color: purple;
+  }
+  
+  /* Table styles */
+  .building-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 20px 0 !important;
+  }
+  
+  .building-table th,
+  .building-table td {
+    border: 1px solid rgb(40, 199, 40) !important;
+    text-align: center !important;
+    padding: 8px !important;
+  }
+  
+  .building-table th {
+    background-color: rgb(40, 199, 40) !important;
+    color: rgb(41, 35, 35) !important;
+  }
+  
+  .building-table td {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .view-sri-button {
+    background-color: rgb(27, 56, 48) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    width: 100px !important;
+    height: 50px !important;
+  }
+  
+  .view-sri-button:hover {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+  }
+  
+  /* Form styles */
+
+  .building-form-title {
+    color:rgb(22, 57, 47);
+    text-align: center;
+    margin-right: 145px;
+    font-size: 30px;
+  }
+
+  .building-form-container {
+    margin-right: 50px !important;
+  }
+
+  .building-form {
+    width: 100% !important; /* Adjust width as needed */
+    background: linear-gradient(to bottom, rgb(143, 237, 143), rgb(255, 255, 255)) !important;
+  }
+  
+  .building-form label {
+    display: block !important;
+    text-align: left !important;
+    margin-bottom: 5px !important; /* Adjust spacing between label and input */
+    color: black !important;
+    font-size: 15px !important;
+  }
+  
+  .building-form input{
+    border: 2px solid rgb(143, 237, 143) !important;
+    border-radius: 20px !important;
+    color: rgb(0, 0, 0)!important;
+    padding: 10px !important;
+    margin-bottom: 15px !important; /* Adjust spacing between fields */
+  }
+
+  .building-form select{
+    border: 2px solid rgb(143, 237, 143) !important;
+    border-radius: 20px !important;
+    color: rgb(0, 0, 0)!important;
+    padding: 10px !important;
+    margin-bottom: 15px !important; /* Adjust spacing between fields */
+  }
+
+  .building-form option{
+    border-radius: 20px !important;
+    color: rgb(0, 0, 0)!important;
+    padding: 10px !important;
+    margin-bottom: 15px !important; /* Adjust spacing between fields */
+  }
+
+  
+  .building-form-field:focus {
+    border-color: mediumslateblue !important;
+  }
+
+  /*domain styles */
+
+  .domain-view-sri-button {
+    background-color: rgb(27, 56, 48) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    width: 150px !important;
+    height: 50px !important;
+    margin-left: 530px !important;
+  }
+  
+  .domain-view-sri-button:hover {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+  }
+
+  .domain-grid {
+    background-color: lightgreen !important;
+    border: 1px solid white !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    color: black !important;
+    padding: 10px !important;
+    border-radius: 10px;
+  }
+  
+  .domain-button {
+    border: 2px solid black !important;
+    border-radius: 50% !important;
+    padding: 10px 20px;
+    color: white !important;
+    background-color: black !important;
+  }
+  
+  .domain-button.green {
+    background-color: green !important;
+  }
+  
+  .domain-button.red {
+    background-color: red !important;
+  }
+  
+  /* service-styles */
+  /* .service-title {
+    position: absolute;
+    font-size: 32px;
+    color: green;
+    margin-bottom: 700px;
+    margin-right: 150px;
+  }
+
+  .service-subtitle {
+    font-size: 16px !important;
+    color: rgb(128, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+  }
+
+  .service-menu {
+    border: 1px solid black !important;
+    border-radius: 15px !important;
+    background-color: rgb(236, 236, 236) !important;
+  }
+  
+  .service-menu-item {
+    display: flexbox !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 15px !important;
+    color: black !important;
+    font-weight: bold !important;
+    border-bottom: 1px solid white !important;
+    cursor: pointer !important;
+  }
+  
+  .service-menu-item.active {
+    background-color: rgb(72, 255, 72) !important;
+    text-align: center !important;
+  }
+  
+  .service-menu-icon {
+    margin-right: 10px !important;
+  }
+
+  .services-form {
+    border: 1px solid #ccc !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    max-height: 500px !important;
+    width: 800px !important;
+    overflow-y: auto !important;
+    position: relative !important;
+    margin-top: 100px !important;
+}
+
+.service-container {
+    border: 1px solid black !important;
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+}
+
+.service-header {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.service-description {
+    font-weight: bold !important;
+}
+
+.service-checkbox .ui.toggle.checkbox input:checked~.box:before,
+.service-checkbox .ui.toggle.checkbox input:checked~label:before {
+    background-color: green !important;
+}
+
+.levels-form {
+    background-color: rgb(236, 236, 236) !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+}
+
+.level-checkbox .ui.checkbox input:checked~.box:before,
+.level-checkbox .ui.checkbox input:checked~label:before {
+    background-color: green !important;
+}
+
+.service-view-sri-button {
+    background-color: rgb(27, 56, 48) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    width: 100px !important;
+    height: 50px !important;
+    margin-top: 20px !important;
+  }
+  
+  .service-view-sri-button:hover {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+  } */
+
+.service-container {
+    border: 1px solid black !important;
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+}
+
+.service-header {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.service-description {
+    font-weight: bold !important;
+}
+
+.service-checkbox .ui.toggle.checkbox input:checked~.box:before,
+.service-checkbox .ui.toggle.checkbox input:checked~label:before {
+    background-color: green !important;
+}
+
+.levels-form {
+    background-color: rgb(236, 236, 236) !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+}
+
+.level-checkbox .ui.checkbox input:checked~.box:before,
+.level-checkbox .ui.checkbox input:checked~label:before {
+    background-color: green !important;
+}
+  /* sriscore styles*/
+
+.sri-building-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  border: 4px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+}
+
+.sri-building-button:hover {
+  opacity: 0.8;
+}
+
+.sri-my-account {
+  border-color: orange;
+}
+
+.sri-my-buildings {
+  border-color: green;
+}
+
+.sri-add-building {
+  border-color: purple;
+}
+
+.building-class {
+  margin-top: 15px;
+
+}
+
+/* UpgradeSRI styles */
+
+.upgrade-sri-score-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.upgrade-main-title {
+  font-size: 32px;
+  color: #006400;
+  margin-bottom: 0;
+}
+
+.upgrade-building-subtitle {
+  font-size: 16px;
+  color: #333;
+}
+
+.upgrade-sri-building-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.upgrade-logout-button {
+  margin-right: 10px;
+}
+
+.upgrade-main-content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.upgrade-title {
+  font-size: 36px;
+  color: #006400;
+  margin-bottom: 20px;
+}
+
+.upgrade-current-sri {
+  font-size: 24px;
+  color: #228B22;
+  margin-bottom: 30px;
+}
+
+.upgrade-user-info-card {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  position: absolute;
+  left: 20px;
+  top: 180px;
+}
+
+.upgrade-input-section {
+  margin: 20px 0;
+  font-size: 20px; /* Larger font size for the label */
+  font-weight: bold; /* Make the label bold */
+  color: #333; /* Slightly darker color for better contrast */
+}
+
+.upgrade-input-section label {
+  margin-right: 10px;
+}
+
+#targetSRI {
+  border-radius: 20px;
+  border: 2px solid #90EE90;
+  padding: 8px;
+  width: 200px;
+  font-size: 18px; /* Ensures the input text size matches the label */
+  margin-top: 10px;
+}
+
+.upgrade-submit-button {
+  background-color: #006400;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid #006400;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+
+.upgrade-submit-button:hover {
+  background-color: white;
+  color: #006400;
+  border: 2px solid #006400;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.upgrade-back-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #90EE90;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid #006400;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.upgrade-back-button:hover {
+  background-color: #006400;
+  color: white;
+}
+
+/* Title for the upgrades section */
+.upgrades-title {
+  text-align: center;
+  color: #32CD32; /* Green color */
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.upgrades-title2 {
+  text-align: center;
+  color: #132d13; /* Green color */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Center the table within the page */
+.upgrades-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+/* Styling for the table */
+.upgrades-table-container table {
+  border-collapse: collapse;
+  border: 2px solid #90EE90; /* Light green border */
+  width: 80%; /* Adjust width as needed */
+}
+
+/* Center text inside table cells */
+.upgrades-table-container th,
+.upgrades-table-container td {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Bold text for the table headers */
+.upgrades-table-container th {
+  font-weight: bold;
+  color: #000; /* Black text */
+}
+
+/* Light green border for table cells */
+.upgrades-table-container td,
+.upgrades-table-container th {
+  border: 1px solid #90EE90;
+}
+
+/* Additional spacing */
+.upgrades-section {
+  margin-top: 40px;
+}
+

@@ -1,0 +1,88 @@
+{
+    "user": 1,
+    "input_sri": 30.23,
+    "building_type": "Residential",
+    "zone": "South Europe",
+    "domain_scores": {
+        "Heating": 41.67,
+        "Domestic hot water": 50.0,
+        "Cooling": 13.64,
+        "Dynamic building envelope": 41.67
+    },
+    "impact_scores": {
+        "Energy efficiency": 54.34,
+        "Energy, flexibility and storage": 33.19,
+        "Comfort": 36.36,
+        "Convenience": 43.33,
+        "Health, wellbeing and accessibility": 41.67,
+        "Maintenance and fault prediction": 0.0,
+        "Information to occupants": 0.0
+    },
+    "key_functionalities_scores": {
+        "Energy Performance and Operation": 27.17,
+        "Response to User Needs": 30.34,
+        "Energy Flexibility": 33.19
+    },
+    "services": [
+        {
+            "service_code": "H-1a",
+            "level": 2,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "H-1c",
+            "level": 1,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "H-1d",
+            "level": 2,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "H-2a",
+            "level": 1,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "H-2d",
+            "level": 3,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "DHW-1a",
+            "level": 2,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "DHW-1b",
+            "level": 1,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "DHW-1d",
+            "level": 2,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "C-1a",
+            "level": 2,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "C-1b",
+            "level": 1,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "DE-1",
+            "level": 1,
+            "percentage": 100.0
+        },
+        {
+            "service_code": "DE-2",
+            "level": 1,
+            "percentage": 100.0
+        }
+    ]
+}

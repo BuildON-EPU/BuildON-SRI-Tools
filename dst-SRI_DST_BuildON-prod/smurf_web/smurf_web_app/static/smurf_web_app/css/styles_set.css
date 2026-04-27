@@ -1,0 +1,594 @@
+/* Modern SMURF Tool Styles - Aligned with SRI Calculator */
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+/* Modern Header Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.navbar-logo {
+    max-width: 200px;
+    height: auto;
+    filter: brightness(1.1);
+}
+
+.nav-link {
+    color: #2d3748 !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea !important;
+    transform: translateY(-1px);
+}
+
+/* Content Area */
+.content {
+    margin-top: 100px;
+    flex: 1;
+    padding: 20px;
+}
+
+/* Modern Card Styles */
+.custom-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 32px !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 24px !important;
+}
+
+.custom-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-title {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #2d3748 !important;
+    margin-bottom: 16px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-align: center !important;
+}
+
+.card-text {
+    font-size: 18px !important;
+    color: #4a5568 !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+}
+
+.card-test {
+    font-size: 18px !important;
+    color: #4a5568 !important;
+    line-height: 1.6 !important;
+}
+
+/* Modern Table Styles */
+#servicesTable {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 20px 16px !important;
+    border: none !important;
+    font-size: 14px !important;
+    text-align: center !important;
+}
+
+.table tbody td {
+    padding: 16px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    color: #2d3748 !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05) !important;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(248, 250, 252, 0.5) !important;
+}
+
+/* Modern Badge Styles */
+.badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    padding: 6px 12px !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+}
+
+/* Card Deck Layout */
+.card-deck {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    margin-top: 32px !important;
+}
+
+.bottom-cards {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 32px !important;
+    transition: all 0.3s ease !important;
+    margin-top: 0 !important;
+    min-height: 300px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.bottom-cards:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* SRI Score Styles */
+.sri-score {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
+}
+
+.sri-score.class-A, .sri-score.class-B, .sri-score.class-C, 
+.sri-score.class-D, .sri-score.class-E, .sri-score.class-F, 
+.sri-score.class-G {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.class-A-text, .class-B-text, .class-C-text, 
+.class-D-text, .class-E-text, .class-F-text, 
+.class-G-text {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+}
+
+.centered-image {
+    max-width: 120px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Modern Form Styles */
+.form-label {
+    font-size: 24px !important;
+    color: #2d3748 !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #2d3748 !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+/* Modern Button Styles */
+.proceed-button {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(72, 187, 120, 0.3) !important;
+    margin-top: 20px !important;
+}
+
+.proceed-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(72, 187, 120, 0.4) !important;
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%) !important;
+}
+
+/* DataTables Modern Styling */
+.dataTables_wrapper {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+}
+
+.dataTables_filter input[type="search"] {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    color: #2d3748 !important;
+    font-weight: 500 !important;
+}
+
+.dataTables_filter input[type="search"]:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.dataTables_length {
+    display: none !important;
+}
+
+.dataTables_info {
+    color: #4a5568 !important;
+    font-weight: 500 !important;
+}
+
+.dataTables_paginate .paginate_button {
+    background: rgba(102, 126, 234, 0.1) !important;
+    border: 1px solid rgba(102, 126, 234, 0.2) !important;
+    border-radius: 8px !important;
+    color: #667eea !important;
+    font-weight: 500 !important;
+    margin: 0 2px !important;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background: rgba(102, 126, 234, 0.2) !important;
+    color: #667eea !important;
+}
+
+.dataTables_paginate .paginate_button.current {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+}
+
+/* Modern Footer */
+footer {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05) !important;
+    margin-top: auto !important;
+    padding: 20px 0 !important;
+}
+
+.centered-footer {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    filter: brightness(1.05) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-deck {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    .custom-card {
+        padding: 24px !important;
+    }
+    
+    .card-title {
+        font-size: 24px !important;
+    }
+    
+    .content {
+        padding: 16px !important;
+    }
+}
+
+/* Animation for smooth transitions */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Improved focus states for accessibility */
+.proceed-button:focus,
+.form-control:focus {
+    outline: 2px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 2px;
+}
+
+/* Section spacing */
+#Service_Overview {
+    padding-top: 40px !important;
+}
+
+/* Service overview title */
+#serviceOverviewTitle h5 {
+    font-size: 18px !important;
+    color: #4a5568 !important;
+    line-height: 1.6 !important;
+    /* margin-bottom: 24px !important; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.jumbotron {
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+}
+footer {
+    background-color: #f6f6f6;
+    color: #000000;
+    text-align: center;
+    /*padding: 15px 0;*/
+    width: 100%;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+/* Add style for the specific text */
+#serviceOverviewTitle {
+    color: #fff;
+}
+/* Add style for the table and round the corners */
+#servicesTable {
+    border-radius: 10px; /* Add rounded corners to the table */
+    overflow: hidden; /* Hide any overflowing content */
+}
+/* Style the pill badges */
+.badge {
+    border-radius: 20px; /* Make the pill badges more rounded */
+}
+/* Ensure cards have the same height */
+.card-deck {
+    display: flex;
+    justify-content: space-between; /* Add space between cards */
+    margin-bottom: 20px; /* Add margin at the bottom of the card-deck section */
+
+}
+.card {
+    flex: 1;
+    background-color: #eaffb1; /* Orange background color */
+    margin-right: 5px; /* Add margin to create spacing between cards */
+    border-radius: 20px; /* Make cards rounder */
+}
+.card:last-child {
+    margin-right: 0; /* Remove margin from the last card */
+}
+/* Style for the SRI score text */
+.sri-score {
+    font-weight: bold;
+    color: #5C5DFC;
+    font-size: 22px; /* Increase the font size */
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Center text vertically */
+}
+/* Style for the Proceed button */
+.proceed-button {
+    background-color: #5C5DFC;
+    border: none;
+    margin-top: 10px; /* Add space between input field and button */
+    align-self: center; /* Align the button at the center of the column */
+}
+.proceed-button:hover {
+background-color: #4343fd;
+}
+/* Adjust the spacing between form elements */
+.form-inline .row {
+    margin-top: 10px; /* Add spacing between elements */
+}
+/* Center-align the data in the "Domain" and "Level" columns */
+.dataTables_wrapper .dataTable tbody td:nth-child(2), /* 2 is the column index for "Domain" */
+.dataTables_wrapper .dataTable tbody td:nth-child(4) { /* 4 is the column index for "Level" */
+    text-align: center;
+}
+/* Change the background color of alternating row stripes to light green */
+.dataTables_wrapper .dataTable tbody tr:nth-child(odd) {
+    background-color: lightgreen !important;
+}
+/* Style the DataTables search input field */
+.dataTables_filter input[type="search"] {
+    background-color: rgb(249, 248, 248);
+    color: #000; /* Text color */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the input */
+}
+/* Style the DataTables "Show entries" tab background */
+.dataTables_wrapper .dataTables_length select {
+    background-color: white !important; /* Set the background color to white */
+    color: #000 !important; /* Text color */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding around the select */
+}
+/* Style the "Show entries" dropdown when expanded */
+.dataTables_length select:focus {
+    background-color: white !important; /* Set background color to white when focused (expanded) */
+    color: #fff !important; /* Text color in expanded state */
+}
+/* Style the "Show entries" dropdown options */
+.dataTables_length select option {
+    background-color: white !important; /* Set background color to white for options */
+    color: #000; /* Text color for options */
+}
+.dataTables_wrapper .dataTables_length {
+    display: none;
+}
+.table thead th {
+    background-color: #5C5DFC;
+    text-align: center;
+}
+/* Add space at the top to prevent content from hiding behind the navbar */
+.content {
+    margin-top: 80px;
+}
+.navbar-logo {
+    max-width: 220px;
+    height: auto;
+    margin-right: 0px;  
+}
+/* Custom styles for the card */
+.custom-card {
+    border: 1px solid #ddd; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px; /* Add padding for content */
+    background-color: #fff; /* White background */
+}
+.bottom-cards {
+    border: 1px solid #ddd; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px; /* Add padding for content */
+    background-color: #fff; /* White background */
+    margin-top: 20px; /* Add space between the cards */
+}
+.custom-card:not(:last-child) {
+    margin-right: 5px; /* Margin between cards except for the last one */
+}
+#Service_Overview #serviceOverviewTitle {
+    color: black !important;
+}
+/* Make the text black */
+.card-body h5.card-text {
+    color: black;
+}
+/* CSS for centering the image */
+.centered-image {
+    margin: auto;
+    max-width: 150px;
+    height: auto;
+}
+.centered-footer {
+    margin: auto;
+    max-width: 700px;
+    height: auto;
+}
+/* Placeholder styles for SRI classes */
+.sri-score.class-A {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-A-text {
+    color: rgb(41, 140, 66);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-B {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-B-text {
+    color: rgb(110, 162, 72);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-C {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-C-text {
+    color: rgb(182, 207, 41);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-D {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-D-text {
+    color: rgb(251, 185, 29);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-E {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-E-text {
+    color: rgb(255, 163, 87);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-F {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-F-text {
+    color: rgb(218, 88, 8);
+    font-weight: bold;
+    font-size: 20px;
+}
+.sri-score.class-G {
+    color: #5C5DFC;
+    font-weight: bold;
+}
+.class-G-text {
+    color: rgb(231, 77, 77);
+    font-weight: bold;
+    font-size: 20px;
+}
+/* Center-align the form elements within the card */
+.card-body form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

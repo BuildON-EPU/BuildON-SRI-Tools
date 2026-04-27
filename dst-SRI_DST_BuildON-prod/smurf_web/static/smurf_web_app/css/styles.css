@@ -1,0 +1,66 @@
+.jumbotron {
+    background-image: url('/dss/static/sri_enact_web_app/images/131413-lime-green-polygonal-abstract-background-design.jpg');
+    background-size: cover;
+    color: #fff;
+    background-position: center;
+    text-align: center;
+    padding: 150px 0;
+    border-radius: 0; /* Remove round edges */
+    flex-grow: 1; /* Make the jumbotron take up available space */
+}
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* Remove default margin */
+}
+footer {
+    background-color: #fe9d16;
+    color: #000000;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed; /* Set the footer to a fixed position */
+    bottom: 0;
+    width: 100%;
+}
+.btn {
+    border-radius: 25px; /* Rounded button corners */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.btn-primary {
+    background-color: green;
+    border-color: green;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+}
+/* Increase the width of the file input field */
+.custom-file-input {
+    cursor: pointer;
+    border: 2px solid #D4D3FB;
+    border-radius: 5px; 
+    padding: 10px;
+    width: 100%; /* Set the width to 100% to make it wider */
+    background-color: #D4D3FB; /* Set background color to white */
+    color: #353531; /* Set text color to white */
+    }
+/* Style the file input label */
+.custom-file-label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* Style the buttons */
+.btn-secondary {
+    background-color: #333; /* Choose a suitable color */
+    border-color: #333; /* Choose a suitable color */
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #555; /* Choose a suitable color */
+    border-color: #555; /* Choose a suitable color */
+}

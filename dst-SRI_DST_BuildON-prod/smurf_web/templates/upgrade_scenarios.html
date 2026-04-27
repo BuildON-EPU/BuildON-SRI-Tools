@@ -1,0 +1,1035 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Scenarios</title>
+    <link rel="icon" href="{% static 'smurf_web_app/images/new_favicon.ico' %}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'smurf_web_app/css/styles_sce.css' %}">
+    <style>
+    nav .navbar-nav li a.about-link {
+        color: #6c757d ;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+    }
+    nav .navbar-nav li a.about-link:hover {
+        color: #343a40;
+    }
+    .last-datatable {
+            display: none;
+        }
+    .domain-datatable {
+        display: none;
+    }
+    .key-datatable {
+        display: none;
+    }
+    #upgradeTabs {
+    display: none;
+    }
+    /* Default tab text color */
+    .nav-link {
+        color: #343a40; /* Default blue color */
+    }
+
+    /* Hover state */
+    .nav-link:hover {
+        color: black; /* Darker blue on hover */
+    }
+
+    /* Active tab text color */
+    .nav-link.active {
+        color: #343a40; /* Dark gray for active tab */
+        font-weight: bold; /* Optional: Make the active tab bold */
+    }
+    </style>    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand">
+                    <img src="{% static 'smurf_web_app/images/logo.png' %}" alt="Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="about-link" href="{% url 'about' %}">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+  <div class="content">
+    <section id="Upgrade_Scenarios">
+        
+        <div class="container">
+
+
+            <h1 id="upgradeScenariosTitle" class="mt-5">Possible Upgrade Scenarios - Overview</h1>
+            <br>
+            <h5 id="upgradeScenariosDescription"> Here you can view all the potential smartness upgrade actions based on the available infrastructure in your building to achieve your SRI goal:</h5>
+            <br>
+
+            <div class="container2">
+                <!-- Sort Tabs as Buttons -->
+                <div class="scenario-tabs-container">
+                    <ul class="nav nav-tabs" id="sortTabs" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link sort-button" id="sortSRI" onclick="sortScenarios(this, 'sri-gain');showChart('sriGainChart');">Analysis by SRI Gain</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link sort-button" id="sortTotalCost" onclick="sortScenarios(this, 'total-cost'); showChart('totalCostChart');">Analysis by Total Cost</button>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <button class="nav-link sort-button" id="sortCE" onclick="sortScenarios(this, 'ce'); showChart('ceChart');">Analysis by Cost Effectiveness (CE)</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="position-relative mt-5">
+                <ul class="nav nav-tabs d-none" id="upgradeTabs" role="tablist">
+                    {% for scenario in scenarios_dict %}
+                        {% if scenario.result_scenario == 'Success!' %}
+                            <li class="nav-item scenario-item" 
+                                data-total-cost="{{ scenario.TotalCost }}" 
+                                data-sri-gain="{{ scenario.sri_gain|floatformat:2 }}" 
+                                data-ce="{{ scenario.CE|floatformat:2  }}" 
+                                role="presentation">
+                                
+                                <a class="nav-link {% if forloop.first %}active{% endif %} scenario-link-green" 
+                                   id="scenario-tab-{{ scenario.Scenario }}" 
+                                   data-bs-toggle="tab" 
+                                   href="#scenario-{{ scenario.Scenario }}" 
+                                   role="tab" 
+                                   aria-controls="scenario-{{ scenario.Scenario }}">
+                                    Scenario {{ loop.index }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="sriGainChartContainer" class="chart-container">    
+                <canvas id="sriGainChart"></canvas>
+            </div>
+            <div id="totalCostChartContainer" class="chart-container d-none">
+                <canvas id="totalCostChart"></canvas>
+            </div>
+            <div id="ceChartContainer" class="chart-container d-none">
+                <canvas id="ceChart"></canvas>
+            </div>
+                      
+           <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+           <script>
+                    function syncChartsWithTabs() {
+                        // Reorder chart data based on the sorted scenarios
+                        const scenarioItems = Array.from(document.getElementsByClassName('scenario-item'));
+
+                        // Extract relevant data and labels
+                        const labels = scenarioItems.map((item, index) => `Scenario ${index +1}`);
+                        const sriGainData = scenarioItems.map(item => parseFloat(item.getAttribute('data-sri-gain')));
+                        const totalCostData = scenarioItems.map(item => parseFloat(item.getAttribute('data-total-cost')));
+                        const ceData = scenarioItems.map(item => parseFloat(item.getAttribute('data-ce')));
+
+                        // Update the charts
+                        updateChart('sriGainChart', labels, sriGainData, 'SRI Gain');
+                        updateChart('totalCostChart', labels, totalCostData, 'Total Cost');
+                        updateChart('ceChart', labels, ceData, 'CE');
+                    }
+
+                    function updateChart(chartId, labels, data, label) {
+                        const chartElement = document.getElementById(chartId);
+                        const chartInstance = Chart.getChart(chartElement);
+
+                        if (chartInstance) {
+                            chartInstance.data.labels = labels;
+                            chartInstance.data.datasets[0].data = data;
+
+                            // Initialize bar colors (default light blue)
+                            const defaultColor = '#c0c0ff';
+                            const activeColor = '#5C5DFC'; // Dark blue
+                            const colors = Array(data.length).fill(defaultColor);
+
+                            chartInstance.data.datasets[0].backgroundColor = colors;
+
+                            chartInstance.options.onClick = (event, elements) => {
+                                if (elements.length > 0) {
+                                    const index = elements[0].index;
+
+                                    // Update the colors, setting the clicked bar to dark blue
+                                    colors.fill(defaultColor);
+                                    colors[index] = activeColor;
+
+                                    // Apply updated colors to the dataset
+                                    chartInstance.data.datasets[0].backgroundColor = colors;
+
+                                    // Trigger the corresponding tab click
+                                    const scenarioItems = Array.from(document.getElementsByClassName('scenario-item'));
+                                    const selectedItem = scenarioItems[index];
+                                    if (selectedItem) {
+                                        const tabId = `#${selectedItem.querySelector('.nav-link').id}`;
+                                        document.querySelector(tabId)?.click();
+                                    }
+
+                                    // Update the chart to reflect the color change
+                                    chartInstance.update();
+                                }
+                            };
+
+                            chartInstance.update();
+                        }
+                    }
+                    function showChart(chartId) {
+                        // Hide all chart containers
+                        const chartContainers = document.querySelectorAll('.chart-container');
+                        chartContainers.forEach(container => container.classList.add('d-none'));
+
+                        // Show the selected chart
+                        const selectedContainer = document.getElementById(`${chartId}Container`);
+                        if (selectedContainer) {
+                            selectedContainer.classList.remove('d-none');
+                        }
+                      
+                    }
+
+                    function sortScenarios(button, sortAttribute) {
+                        // Highlight the active sort button
+                        const buttons = document.querySelectorAll('.sort-button');
+                        buttons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        // Get all scenario items as an array
+                        
+                        const scenarioItems = Array.from(document.getElementsByClassName('scenario-item'));
+
+                        // Sort scenario items based on the selected attribute
+                        scenarioItems.sort((a, b) => {
+                            return parseFloat(a.getAttribute(`data-${sortAttribute}`)) - parseFloat(b.getAttribute(`data-${sortAttribute}`));
+                        });
+                        
+                        // Reorder scenarios in the tabs without changing scenario IDs
+                        const upgradeTabs = document.getElementById('upgradeTabs');
+                        upgradeTabs.innerHTML = ''; // Clear the list
+
+                        scenarioItems.forEach((item, index) => {
+                            // Update the scenario labels to ensure order is consistent
+                            item.querySelector('.nav-link').innerText = `Scenario ${index + 1}`;
+                            upgradeTabs.appendChild(item);
+                        });
+
+                        // Sync charts with the new tab order
+                        syncChartsWithTabs();
+                    }
+                    document.addEventListener("DOMContentLoaded", function () {
+                        // Data preparation for all charts
+                        const scenarios = [
+                            {% for scenario in scenarios_dict %}
+                                {% if scenario.result_scenario == 'Success!' %}
+                                    {
+                                        id: "{{ scenario.Scenario }}",
+                                        sriGain: {{ scenario.sri_gain|floatformat:2 }},
+                                        totalCost: {{ scenario.TotalCost }},
+                                        ce: {{ scenario.CE }}
+                                    },
+                                {% endif %}
+                            {% endfor %}
+                        ];
+                        
+
+                        const labels = scenarios.map((scenario, index) => `Scenario ${index + 1} `);
+                        const sriGainData = scenarios.map(scenario => scenario.sriGain);
+                        const totalCostData = scenarios.map(scenario => scenario.totalCost);
+                        const ceData = scenarios.map(scenario => scenario.ce);
+                       
+                        // Chart configurations
+                        const chartConfig = (data, label, chartId) => ({
+                            type: 'bar',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: label,
+                                    data: data,
+                                    backgroundColor: '#C8E6C9',
+                                    borderWidth: 0,
+                                    borderRadius: 0,
+                                    barPercentage: 0.8,
+                                    categoryPercentage: 0.8
+                                    //borderColor: 'green',
+                                    // borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: { display: false }
+                                },scales: {
+                                    y: {
+                                        title: {
+                                            display: true,
+                                            text: label,
+                                            color: 'black' // Make the axis title black
+                                        }
+                                    }
+                                },
+                                onClick: (event, elements) => {
+                                    if (elements.length > 0) {
+                                        const index = elements[0].index;
+                                        const tabId = `#scenario-tab-${scenarios[index].id}`;
+                                        
+                                        document.querySelector(tabId)?.click();
+                                    }
+                                }
+                            }
+                        });
+
+                        // Create charts for SRI Gain, Total Cost, and CE
+                        const sriGainCtx = document.getElementById('sriGainChart').getContext('2d');
+                        const sriGainChart = new Chart(sriGainCtx, chartConfig(sriGainData, 'SRI Gain ( % )', 'sriGainChart'));
+
+                        const totalCostCtx = document.getElementById('totalCostChart').getContext('2d');
+                        const totalCostChart = new Chart(totalCostCtx, chartConfig(totalCostData, 'Total Cost ( € )', 'totalCostChart'));
+
+                        const ceCtx = document.getElementById('ceChart').getContext('2d');
+                        const ceChart = new Chart(ceCtx, chartConfig(ceData, 'Cost Effectiveness (CE)', 'ceChart'));
+
+                        const defaultButton = document.getElementById('sortSRI');
+                        defaultButton.classList.add('active');
+                        sortScenarios(defaultButton , 'sri-gain');
+                        
+                        showChart('sriGainChart');
+                        const firstScenarioItem = document.querySelector('.scenario-item .nav-link');
+                        if (firstScenarioItem) {
+                            firstScenarioItem.click(); // Simulate a click on the first scenario's tab
+                        }
+                        const chartElement = document.getElementById('sriGainChart'); // Replace with the chart ID
+                        const chartInstance = Chart.getChart(chartElement);
+
+                        if (chartInstance) {
+                            const defaultIndex = 0; // Index of the first bar
+                            const defaultColor = '#c0c0ff'; // Light purple
+                            //const activeColor = 'rgba(0, 0, 139, 1)'; // Dark blue
+                            const activeColor = '#5C5DFC'; // Dark purple
+
+                            // Update colors to mark the first bar as active
+                            const colors = Array(chartInstance.data.datasets[0].data.length).fill(defaultColor);
+                            colors[defaultIndex] = activeColor;
+
+                            chartInstance.data.datasets[0].backgroundColor = colors;
+
+                            // Trigger the corresponding tab for the first bar
+                            const scenarioItems = Array.from(document.getElementsByClassName('scenario-item'));
+                            const selectedItem = scenarioItems[defaultIndex];
+                            if (selectedItem) {
+                                const tabId = `#${selectedItem.querySelector('.nav-link').id}`;
+                                document.querySelector(tabId)?.click();
+                            }
+
+                            // Update the chart to reflect the active bar
+                            chartInstance.update();
+                        }
+
+                        /*
+                        var scenarioId = $(first).attr('id').replace('scenario-tab-', '');
+                        new bootstrap.Tab('#scenario-' + scenarioId).show();
+                        */
+                    });
+            </script>
+
+            {% comment %}
+            {% endcomment %}
+           
+            <div class="tab-content" id="upgradeTabsContent">
+                <!-- Add tab content dynamically based on scenarios -->
+                {% for scenario in scenarios_dict %}
+                    {% if scenario.result_scenario == 'Success!' %}
+                    <div class="tab-pane fade" id="scenario-{{ scenario.Scenario }}" role="tabpanel" aria-labelledby="scenario-tab-{{ scenario.Scenario }}">
+                        <!-- Tab content for Scenario -->
+                        <table class="table table-bordered table-striped data-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Service Name</th>
+                                    <th>Domain</th>
+                                    <th>Original Functionality Level</th>
+                                    <th>Description of Original Functionality Level</th>
+                                    <th>Suggested Functionality Level</th>
+                                    <th>Description of Suggested Functionality Level</th>
+                                    <th>SRI Gain %</th>
+                                    <th>Market Solutions</th> <!-- New column for ser1 (Techs) -->
+                                    <th>Cost(€)</th> <!-- New column for cost -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for service in scenario.Services %}
+                                    <tr>
+                                            <td>
+                                                {{ service.Service_description }}
+                                            </td>
+                                        <td>
+                                            <span class="badge bg-secondary">{{ service.Domain }}</span>
+                                        </td>
+                                        <td>{{ service.Current_level }}</td>
+                                        <td>{{ service.Current_functionality.desc }}</td>
+                                        <td>{{ service.Upgrade_level }}</td>
+                                        <td>{{ service.Upgrade_functionality.desc }}</td>
+                                        <td>{{ service.SRI_gain|floatformat:2 }}</td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="showPopup(
+                                                    '{{ service.Tech|escapejs }}',
+                                                    {{ service.Cost|floatformat:2 }},
+                                                    '{{ service.desc|escapejs }}',
+                                                    '{{ service.img }}',
+                                                    '{{ service.con }}',
+                                                    {{ forloop.parentloop.counter }}
+                                                     )">
+                                                {{ service.Tech }}
+                                            </a>
+                                        </td>
+                                        <td>{{ service.Cost}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <br>
+                        <!-- Add table for impact scores -->
+                        <div class="table-container last-datatable">
+                        <table class="table table-bordered table-striped data-table impact-table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Impact</th>
+                                    <th>Initial Percentage</th>
+                                    <th>Final Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Extract impact_scores data for this scenario -->
+                                {% for impact_score in input_data.impact_scores %}
+                                    {% with i=forloop.counter0 %}
+                                        <tr>
+                                            <td>{{ impact_score.impact }}</td>
+                                            <td>{{ impact_score.percentage }}</td>
+                                            <td>
+                                                {# Iterate over the indices using for tag to access elements of the list by index #}
+                                                {% for index in scenario.SR_ic_level_total_FINAL %}
+                                                    {% if forloop.counter0 == i %} 
+                                                        {{index|floatformat:2 }}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </td> 
+                                        </tr>
+                                    {% endwith %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        </div>
+                        <div id="popup-{{ forloop.counter }}" class="popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 40%; justify-content: center; align-items: center;z-index: 9999;">
+                            <div id="popup-inner-content-{{ forloop.counter }}" style="background-color: white; padding: 20px; width: 400px; max-width: 80%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center;">
+                            </div>
+                        </div>
+                        <script>
+                            function showPopup(techName, techCost, techDesc, img, con, scenarioId) {
+                                const encodedImg = encodeURIComponent(img);
+                                const imagePath =  `${encodedImg}`;
+                                const popupContent = document.getElementById(`popup-inner-content-${scenarioId}`);
+                                const popup = document.getElementById(`popup-${scenarioId}`);
+                                if (popupContent && popup) {
+                                    // Inject content into the specific scenario pop-up
+                                    popupContent.innerHTML = `
+                                        <h2>${techName}</h2>
+                                        <p><strong>Cost:</strong> ${techCost.toFixed(2)} €</p>
+                                        <p><strong>Energy Consumption:</strong> ${con} kWh/year </p>
+                                        <img src="{% static 'smurf_web_app/images/SRI-ENACT_Images/' %}${imagePath}" alt="${techName}" style="width:100px; height:auto; margin:10px 0;">
+                                        <p><strong>Description:</strong> ${techDesc}</p>
+                                        <button onclick="closePopup(${scenarioId})" 
+                                                style="margin-top: 15px; padding: 8px 12px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                            Close
+                                        </button>
+                                    `;
+                                    // Show the specific pop-up for this scenario
+                                    popup.style.display = "flex";
+                                } else {
+                                    console.error(`Popup elements not found for scenario ID ${scenarioId}`);
+                                }
+                            }
+                            // Function to close the specific pop-up
+                            function closePopup(scenarioId) {
+                                document.getElementById(`popup-${scenarioId}`).style.display = "none";
+                            }
+                        </script>
+                        <!-- Highcharts Bar Chart Container -->
+                        <div id="impactScoresChart_{{ scenario.Scenario }}" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        <!-- Add table for domain scores -->
+                        <div class="table-container domain-datatable">
+                            <table class="table table-bordered table-striped data-table domain-table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Domain</th>
+                                        <th>Initial Percentage</th>
+                                        <th>Final Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Extract domain_scores data for this scenario -->
+                                    {% for domain_score in input_data.domain_scores %}
+                                    <tr>
+                                        <td>{{ domain_score.domain }}</td>
+                                        <td>{{ domain_score.percentage }}</td>
+                                        <td>
+                                        {% with found=False %}
+                                            {% for domain_name, percentage in scenario.SR_domain_total_new.items %}
+                                                {% if domain_name == domain_score.domain %}
+                                                    {{ percentage|floatformat:2 }}
+                                                    {% with found=True %}{% endwith %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if not found %}
+                                                0.00
+                                            {% endif %}
+                                        {% endwith %}
+                                        </td> 
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>    
+                        <!-- Highcharts Bar Chart Container -->
+                        <div id="domainScoresChart_{{ scenario.Scenario }}" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                        <!-- Add table for key functionalities scores -->
+                        <div class="table-container key-datatable">
+                            <table class="table table-bordered table-striped data-table key-table">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Key Functionalities</th>
+                                        <th>Initial Percentage</th>
+                                        <th>Final Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Extract key functionalities scores data for this scenario -->
+                                    {% for key_score in input_data.key_functionalities_scores %}
+                                    <tr>
+                                        <td>{{ key_score.key_functionality }}</td>
+                                        <td>{{ key_score.percentage }}</td>
+                                        <td>
+                                            {% if forloop.counter0 == 0 %}
+                                                {{ scenario.KEY_F.0|floatformat:2 }}
+                                            {% elif forloop.counter0 == 1 %}
+                                                {{ scenario.KEY_F.1|floatformat:2 }}
+                                            {% elif forloop.counter0 == 2 %}
+                                                {{ scenario.KEY_F.2|floatformat:2 }}
+                                            {% else %}
+                                                0.00
+                                            {% endif %}                                        
+                                        </td> 
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div> 
+                        <!-- Highcharts Bar Chart Container -->
+                        <div id="keyScoresChart_{{ scenario.Scenario }}" style="min-width: 310px; height: 400px; margin: 0 auto"></div>                  
+                        <!-- Add cards for SRI scores -->
+                        <br>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Combined Card for Current and New SRI scores side-by-side -->
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="text-center mt-4" style="font-size: 1.3em; font-weight: bold; color: black;">
+                                                Total Cost of the upgrade = {{ scenario.TotalCost|floatformat:2 }} €
+                                            </div>
+                                            <div class="text-center mt-4" style="font-size: 1.3em; font-weight: bold; color: black;">
+                                                The Cost Effectiveness of the upgrade = {{ scenario.CE|floatformat:2 }} €/SRI Gain
+                                            </div>
+                                            <div class="text-center mt-4" style="font-size: 1.3em; font-weight: bold; color: black;">
+                                                The estimated Carbon Emmisions of the upgrade = {{ scenario.TotalCarbon|floatformat:2 }} kg CO<sub>2</sub>/year
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <!-- Column for Current SRI -->
+                                                <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                                                    {% if scenario.input_sri >= 90 %}
+                                                        <span class="sri-score class-A mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-A-text">Your SRI Class is A</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_A.png' %}" alt="Class A Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.input_sri >= 80 %}
+                                                        <span class="sri-score class-B mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-B-text">Your SRI Class is B</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_B.png' %}" alt="Class B Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.input_sri >= 65 %}
+                                                        <span class="sri-score class-C mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-C-text">Your SRI Class is C</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_C.png' %}" alt="Class C Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.input_sri >= 50 %}
+                                                        <span class="sri-score class-D mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-D-text">Your SRI Class is D</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_D.png' %}" alt="Class D Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.input_sri >= 35 %}
+                                                        <span class="sri-score class-E mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-E-text">Your SRI Class is E</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_E.png' %}" alt="Class E Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.input_sri >= 20 %}
+                                                        <span class="sri-score class-F mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-F-text">Your SRI Class is F</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_F.png' %}" alt="Class F Image" class="img-fluid">
+                                                        </div>
+                                                    {% else %}
+                                                        <span class="sri-score class-G mb-3">Your current SRI score is {{ scenario.input_sri }}%</span>
+                                                        <p class="mb-3 class-G-text">Your SRI Class is G</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_G.png' %}" alt="Class G Image" class="img-fluid">
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                                <!-- Column for New SRI -->
+                                                <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+                                                    {% if scenario.Total_SRI_gain >= 90 %}
+                                                        <span class="sri-score class-A mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-A-text">Your new SRI Class is A</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_A.png' %}" alt="Class A Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.Total_SRI_gain >= 80 %}
+                                                        <span class="sri-score class-B mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-B-text">Your new SRI Class is B</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_B.png' %}" alt="Class B Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.Total_SRI_gain >= 65 %}
+                                                        <span class="sri-score class-C mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-C-text">Your new SRI Class is C</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_C.png' %}" alt="Class C Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.Total_SRI_gain >= 50 %}
+                                                        <span class="sri-score class-D mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-D-text">Your new SRI Class is D</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_D.png' %}" alt="Class D Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.Total_SRI_gain >= 35 %}
+                                                        <span class="sri-score class-E mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-E-text">Your new SRI Class is E</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_E.png' %}" alt="Class E Image" class="img-fluid">
+                                                        </div>
+                                                    {% elif scenario.Total_SRI_gain >= 20 %}
+                                                        <span class="sri-score class-F mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-F-text">Your new SRI Class is F</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_F.png' %}" alt="Class F Image" class="img-fluid">
+                                                        </div>
+                                                    {% else %}
+                                                        <span class="sri-score class-G mb-3">Your new SRI score: {{ scenario.Total_SRI_gain|floatformat:2 }}% - {{ scenario.result_scenario }}</span>
+                                                        <p class="mb-3 class-G-text">Your new SRI Class is G</p>
+                                                        <div class="centered-image mb-3">
+                                                            <img src="{% static 'smurf_web_app/images/class_G.png' %}" alt="Class G Image" class="img-fluid">
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <!-- Total Cost Section Inside the Card -->
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                           </div>
+                        
+                                     
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>   
+    </section> 
+</div>
+            
+
+
+    <footer>
+        <div class="container text-center">
+            <div style="padding-top: 20px; padding-bottom: 20px;">
+                <div>
+                    <img src="{% static 'smurf_web_app/images/footer.png' %}" alt="Footer Image" style="width: 90%; height: auto;">
+                </div>
+            </div>    
+        </div>
+    </footer>
+
+    <!-- <footer>
+        <div class="container text-center">
+            <div>
+                <img src="{% static 'smurf_web_app/images/footer.png' %}" alt="Footer Image" class="centered-footer">
+            </div>
+        </div>
+    </footer> -->
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <!-- Highcharts JS -->
+    <!-- Include Highcharts library -->
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/highcharts/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highcharts/modules/exporting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highcharts/modules/export-data.js"></script>
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Handle tab click events
+            $('.nav-link').click(function(e) {
+                e.preventDefault();
+                // Get the scenario number from the clicked tab
+                var scenarioId = $(this).attr('id').replace('scenario-tab-', '');
+                // Hide all tab content
+                //$('.tab-pane').hide();
+                // Show tab content
+                //$('#scenario-' + scenarioId).show();
+                // Check if DataTable is already initialized for this tab's table
+                if (!$.fn.dataTable.isDataTable('#scenario-' + scenarioId + ' .data-table')) {
+                    //$('#upgradeTabs a:first').trigger('click');
+                    // If not initialized, initialize DataTable for the visible table in the selected tab
+                    $('#scenario-' + scenarioId + ' .data-table').DataTable({
+                        // Add DataTable options here
+                        "paging": false, // Enable pagination
+                        "ordering": true, // Enable column sorting
+                        "searching": true, // Enable searching
+                        "lengthChange": false, // Disable "Show entries" dropdown
+                    });
+                    // Initialize DataTable buttons for the current tab
+                    var table = $('#scenario-' + scenarioId + ' .data-table').DataTable();
+                    new $.fn.dataTable.Buttons(table, {
+                        buttons: [ 'copy', 'excel', 'print' ]
+                    });
+                    table.buttons().container()
+                        .appendTo($('#scenario-' + scenarioId + ' .col-md-6:eq(0)'));
+                }
+                //Extract data from DataTable for impact scores for success
+                var impact_Data = $('#scenario-' + scenarioId + ' .impact-table').DataTable().rows().data().toArray();
+                var categories = impact_Data.map(function(row) {
+                    return row[0]; // Impact is in the first column
+                });
+                var initialPercentages = impact_Data.map(function (row) {
+                    return parseFloat(row[1]); // Initial Percentage is in the second column
+                });
+                var finalPercentages = impact_Data.map(function (row) {
+                    return parseFloat(row[2]); // Final Percentage is in the third column
+                });
+                // Extract data from DataTable for domain scores for success
+                var domain_Data = $('#scenario-' + scenarioId + ' .domain-table').DataTable().rows().data().toArray();
+                var domainCategories = domain_Data.map(function(row) {
+                    return row[0]; // Domain is in the first column
+                });
+                var domainInitialPercentages = domain_Data.map(function(row) {
+                    return parseFloat(row[1]); // Initial Percentage is in the second column
+                });
+                var domainFinalPercentages = domain_Data.map(function(row) {
+                    return parseFloat(row[2]); // Final Percentage is in the third column
+                });
+                // Extract data from DataTable for key scores for success
+                var key_Data = $('#scenario-' + scenarioId + ' .key-table').DataTable().rows().data().toArray();
+                var keyCategories = key_Data.map(function(row) {
+                    return row[0]; // Domain is in the first column
+                });
+                var keyInitialPercentages = key_Data.map(function(row) {
+                    return parseFloat(row[1]); // Initial Percentage is in the second column
+                });
+                var keyFinalPercentages = key_Data.map(function(row) {
+                    return parseFloat(row[2]); // Final Percentage is in the third column
+                });
+                // Hide Highcharts credentials
+                Highcharts.setOptions({
+                    credits: {
+                        enabled: false
+                    }
+                });
+                // Create a Highcharts bar chart for impact scores
+                Highcharts.chart('impactScoresChart_' + scenarioId, {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Impact Bar Chart (%)'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Percentage'
+                        }
+                    },
+                    xAxis: {
+                        categories: categories,
+                        title: {
+                            text: 'Impact'
+                        }
+                    },
+                    series: [{
+                        name: 'Initial',
+                        data: initialPercentages,
+                        color: '#c0c0ff'
+                    }, {
+                        name: 'Final',
+                        data: finalPercentages,
+                        color: '#5C5DFC'
+                    }]
+                }); 
+                // Create a Highcharts bar chart for domain scores
+                Highcharts.chart('domainScoresChart_' + scenarioId, {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Domain Bar Chart (%)'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Percentage'
+                        }
+                    },
+                    xAxis: {
+                        categories: domainCategories,
+                        title: {
+                            text: 'Domain'
+                        }
+                    },
+                    series: [{
+                        name: 'Initial',
+                        data: domainInitialPercentages,
+                        color: '#c0c0ff'
+                    }, {
+                        name: 'Final',
+                        data: domainFinalPercentages,
+                        color: '#5C5DFC'
+                    }]
+                });
+                // Create a Highcharts bar chart for key functionalities scores
+                Highcharts.chart('keyScoresChart_' + scenarioId, {
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Key Functionalities Bar Chart (%)'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Percentage'
+                        }
+                    },
+                    xAxis: {
+                        categories: keyCategories,
+                        title: {
+                            text: 'Key Functionality'
+                        }
+                    },
+                    series: [{
+                        name: 'Initial',
+                        data: keyInitialPercentages,
+                        color: '#c0c0ff'
+                    }, {
+                        name: 'Final',
+                        data: keyFinalPercentages,
+                        color: '#5C5DFC'
+                    }]
+                });     
+            });
+            // Add the 'active' class to the first success scenario tab when the page loads
+            $('#upgradeTabs a:first').tab('show');
+            $('#sortTabs a:sortSRI').tab('show');            
+            // Initialize DataTable for the first visible table when the page loads for success scenarios
+            //$('#upgradeTabs a:first').trigger('click');
+            $('#sortTabs a:sortSRI').trigger('click');
+            $('#scenario-tab-1').addClass('active');
+            $('#scenario-1').addClass('show active');
+            $('#scenario-1 .data-table').DataTable({
+                // Add DataTable options here
+                "paging": false, // Enable pagination
+                "ordering": true, // Enable column sorting
+                "searching": true, // Enable searching
+                "lengthChange": false, // Disable "Show entries" dropdown
+            });
+            // Initialize DataTable buttons for the first tab for failure scenarios
+            var table = $('#scenario-1 .data-table').DataTable();
+            new $.fn.dataTable.Buttons(table, {
+                buttons: [ 'copy', 'excel', 'print' ]
+            });
+            table.buttons().container()
+                .appendTo($('#scenario-1 .col-md-6:eq(0)'));
+            // Initialize DataTable for the first visible table when the page loads for success scenarios
+            $('#upgradeTabs a:first').trigger('click');
+            // Extract data from DataTable for first failure scenario for impact scores
+            var impact_Data= $('#scenario-1  .impact-table').DataTable().rows().data().toArray();
+            var categories= impact_Data.map(function(row) {
+                return row[0]; // Impact is in the first column
+            });
+            var initialPercentages = impact_Data.map(function (row) {
+                return parseFloat(row[1]); // Initial Percentage is in the second column
+            });
+            var finalPercentages = impact_Data.map(function (row) {
+                return parseFloat(row[2]); // Final Percentage is in the third column
+            });
+            // Extract data from DataTable for first failure scenario for domain scores
+            var domain_Data = $('#scenario-1 .domain-table').DataTable().rows().data().toArray();
+            var domainCategories = domain_Data.map(function(row) {
+                return row[0]; // Domain is in the first column
+            });
+            var domainInitialPercentages = domain_Data.map(function(row) {
+                return parseFloat(row[1]); // Initial Percentage is in the second column
+            });
+            var domainFinalPercentages = domain_Data.map(function(row) {
+                return parseFloat(row[2]); // Final Percentage is in the third column
+            });
+            // Extract data from DataTable for first failure scenario for key functionalities scores
+            var key_Data = $('#scenario-1 .key-table').DataTable().rows().data().toArray();
+            var keyCategories = key_Data.map(function(row) {
+                return row[0]; // Domain is in the first column
+            });
+            var keyInitialPercentages = key_Data.map(function(row) {
+                return parseFloat(row[1]); // Initial Percentage is in the second column
+            });
+            var keyFinalPercentages = key_Data.map(function(row) {
+                return parseFloat(row[2]); // Final Percentage is in the third column
+            });
+
+            // Hide Highcharts credentials
+            Highcharts.setOptions({
+                credits: {
+                    enabled: false
+                }
+            });
+
+            //Create a Highcharts bar chart
+            Highcharts.chart('impactScoresChart_1', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Impact Bar Chart (%)'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percentage'
+                    }
+                },
+                xAxis: {
+                    categories: categories,
+                    title: {
+                        text: 'Impact'
+                    }
+                },
+                series: [{
+                    name: 'Initial',
+                        data: initialPercentages,
+                        color: '#c0c0ff'
+                }, {
+                    name: 'Final',
+                    data: finalPercentages,
+                    color: '#5C5DFC'
+                }]
+            }); 
+            //Create a Highcharts bar chart
+            Highcharts.chart('domainScoresChart_1', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Domain Bar Chart (%)'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percentage'
+                    }
+                },
+                xAxis: {
+                    categories: domainCategories,
+                    title: {
+                        text: 'Domain'
+                    }
+                },
+                series: [{
+                    name: 'Initial',
+                        data: domainInitialPercentages,
+                        color: '#c0c0ff'
+                }, {
+                    name: 'Final',
+                    data: domainFinalPercentages,
+                    color: '#5C5DFC'
+                }]
+            }); 
+            //Create a Highcharts bar chart
+            Highcharts.chart('keyScoresChart_1', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Key Functionalities Bar Chart (%)'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Percentage'
+                    }
+                },
+                xAxis: {
+                    categories: keyCategories,
+                    title: {
+                        text: 'Key Functionality'
+                    }
+                },
+                series: [{
+                    name: 'Initial',
+                        data: keyInitialPercentages,
+                        color: '#c0c0ff'
+                }, {
+                    name: 'Final',
+                    data: keyFinalPercentages,
+                    color: '#5C5DFC'
+                }]
+            });             
+        });          
+       
+    </script>
+</body>
+</html>

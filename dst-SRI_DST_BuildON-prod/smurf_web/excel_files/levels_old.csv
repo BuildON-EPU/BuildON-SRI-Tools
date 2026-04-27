@@ -1,0 +1,429 @@
+code,level_desc,desc,score_cr1,score_cr2,score_cr3,score_cr4,score_cr5,score_cr6,score_cr7,level,mandatory,domain
+H-1a,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Heating
+H-1a,level 1,Central automatic control (e.g. central thermostat),1,0,1,1,1,0,0,1,0,Heating
+H-1a,level 2,"Individual room control (e.g. thermostatic valves, or electronic controller)",2,0,2,2,2,0,0,2,0,Heating
+H-1a,level 3,Individual room control with communication between controllers and to BACS,2,0,2,3,2,1,0,3,0,Heating
+H-1a,level 4,Individual room control with communication and occupancy detection,3,0,2,3,2,1,0,4,0,Heating
+H-1b,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Heating
+H-1b,level 1,Central automatic control,1,0,1,1,1,0,0,1,0,Heating
+H-1b,level 2,Advanced central automatic control,1,0,1,2,2,0,0,2,0,Heating
+H-1b,level 3,Advanced central automatic control with intermittent operation and/or room temperature feedback control,2,0,2,3,2,1,1,3,0,Heating
+H-1c,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Heating
+H-1c,level 1,Outside temperature compensated control,1,0,1,1,0,0,0,1,0,Heating
+H-1c,level 2,Demand based control,2,0,1,1,0,0,0,2,0,Heating
+H-1d,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Heating
+H-1d,level 1,On off control,1,0,0,0,0,0,0,1,0,Heating
+H-1d,level 2,Multi-Stage control,2,0,0,0,0,0,0,2,0,Heating
+H-1d,level 3,Variable speed pump control (pump unit (internal) estimations),2,0,0,0,0,0,0,3,0,Heating
+H-1d,level 4,Variable speed pump control (external demand signal),2,0,0,0,0,0,0,4,0,Heating
+H-1f,level 0,Continuous storage operation,0,0,0,0,0,0,0,0,0,Heating
+H-1f,level 1,Time-scheduled storage operation,1,0,0,0,0,0,0,1,0,Heating
+H-1f,level 2,Load prediction based storage operation,2,1,0,0,0,0,0,2,0,Heating
+H-1f,level 3,Heat storage capable of flexible control through grid signals (e.g. DSM) ,2,2,0,0,0,0,0,3,0,Heating
+H-2a,level 0,Constant temperature control,0,0,0,0,0,0,0,0,0,Heating
+H-2a,level 1,Variable temperature control depending on outdoor temperature,1,0,1,0,0,0,0,1,0,Heating
+H-2a,level 2,Variable temperature control depending on the load (e.g. depending on supply water temperature set point),2,0,2,0,0,0,0,2,0,Heating
+H-2b,level 0,On/Off-control of heat generator,0,0,0,0,0,0,0,0,0,Heating
+H-2b,level 1,Multi-stage control of heat generator capacity depending on the load or demand (e.g. on/off of several compressors),1,1,1,0,0,0,0,1,0,Heating
+H-2b,level 2,"Variable control of heat generator capacity depending on the load or demand (e.g. hot gas bypass, inverter frequency control)",2,1,2,0,0,0,0,2,0,Heating
+H-2b,level 3,Variable control of heat generator capacity depending on the load AND external signals from grid,2,3,2,0,0,0,0,3,0,Heating
+H-2d,level 0,Priorities only based on running time,0,0,0,0,0,0,0,0,0,Heating
+H-2d,level 1,Control according to fixed priority list: e.g. based on rated energy efficiency,1,0,0,0,0,0,0,1,0,Heating
+H-2d,level 2,"Control according to dynamic priority list (based on current energy efficiency, carbon emissions and capacity of generators, e.g. solar, geothermal heat, cogeneration plant, fossil fuels)",2,1,0,0,0,0,0,2,0,Heating
+H-2d,level 3,"Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions  and capacity of generators)",3,2,0,0,0,0,0,3,0,Heating
+H-2d,level 4,"Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions, capacity of generators AND external signals from grid)",3,3,0,0,0,0,0,4,0,Heating
+H-3,level 0,None,0,0,0,0,0,0,0,0,1,Heating
+H-3,level 1,"Central or remote reporting of current performance KPIs (e.g. temperatures, submetering energy usage)",1,0,0,0,0,1,1,1,1,Heating
+H-3,level 2,Central or remote reporting of current performance KPIs and historical data,1,0,0,0,0,1,2,2,1,Heating
+H-3,level 3,Central or remote reporting of performance evaluation including forecasting and/or benchmarking,1,0,0,0,0,1,3,3,1,Heating
+H-3,level 4,"Central or remote reporting of performance evaluation including forecasting and/or benchmarking, also including predictive management and fault detection",1,0,0,1,0,3,3,4,1,Heating
+H-4,level 0,No automatic control,0,0,0,0,0,0,0,0,1,Heating
+H-4,level 1,Scheduled operation of heating system,1,0,1,1,0,0,0,1,1,Heating
+H-4,level 2,Self-learning optimal control of heating system,2,1,2,2,0,0,0,2,1,Heating
+H-4,level 3,Heating system capable of flexible control through grid signals (e.g. DSM) ,2,3,2,3,0,0,0,3,1,Heating
+H-4,level 4,Optimized control of  heating system based on local predictions and grid signals (e.g. through model predictive control),2,3,3,3,1,0,0,4,1,Heating
+DHW-1a,level 0,Automatic control on / off,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-1a,level 1,Automatic control on / off and scheduled charging enable,1,1,0,1,0,0,0,1,0,Domestic hot water
+DHW-1a,level 2,Automatic control on / off and scheduled charging enable and multi-sensor storage management,2,2,0,2,0,0,0,2,0,Domestic hot water
+DHW-1a,level 3,"Automatic charging control based on local availability of renewables or information from electricity grid (DR, DSM)",2,3,0,2,0,0,0,3,0,Domestic hot water
+DHW-1b,level 0,Automatic control on / off,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-1b,level 1,Automatic control on / off and scheduled charging enable,1,1,0,1,0,0,0,1,0,Domestic hot water
+DHW-1b,level 2,"Automatic on/off control, scheduled charging enable and demand-based supply temperature control or multi-sensor storage management",2,2,0,2,0,0,0,2,0,Domestic hot water
+DHW-1b,level 3,DHW production system capable of automatic charging control based on external signals (e.g. from district heating grid),2,3,0,2,0,0,0,3,0,Domestic hot water
+DHW-1d,level 0,Manual selected control of solar energy or heat generation,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-1d,level 1,Automatic control of solar storage charge (Prio. 1) and supplementary storage charge,1,0,0,1,0,0,0,1,0,Domestic hot water
+DHW-1d,level 2,Automatic control of solar storage charge (Prio. 1) and supplementary storage charge and demand-oriented supply or multi-sensor storage management,2,1,0,2,0,0,0,2,0,Domestic hot water
+DHW-1d,level 3,"Automatic control of solar storage charge (Prio. 1) and supplementary storage charge, demand-oriented supply and return temperature control and multi-sensor storage management",3,2,0,2,0,0,0,3,0,Domestic hot water
+DHW-2b,level 0,Priorities only based on running time,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-2b,level 1,Control according to fixed priority list: e.g. based on rated energy efficiency,1,0,0,0,0,0,0,1,0,Domestic hot water
+DHW-2b,level 2,"Control according to dynamic priority list (based on current energy efficiency, carbon emissions and capacity of generators, e.g. solar, geothermal heat, cogeneration plant, fossil fuels)",2,1,0,0,0,0,0,2,0,Domestic hot water
+DHW-2b,level 3,"Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions  and capacity of generators)",3,2,0,0,0,0,0,3,0,Domestic hot water
+DHW-2b,level 4,"Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions, capacity of generators AND external signals from grid)",3,3,0,0,0,0,0,4,0,Domestic hot water
+DHW-3,level 0,None,0,0,0,0,0,0,0,0,1,Domestic hot water
+DHW-3,level 1,"Indication of actual values (e.g. temperatures, submetering energy usage)",1,0,0,0,0,1,1,1,1,Domestic hot water
+DHW-3,level 2,Actual values and historical data,1,0,0,0,0,1,2,2,1,Domestic hot water
+DHW-3,level 3,Performance evaluation including forecasting and/or benchmarking,1,0,0,0,0,1,3,3,1,Domestic hot water
+DHW-3,level 4,"Performance evaluation including forecasting and/or benchmarking, also including predictive management and fault detection",1,0,0,1,0,2,3,4,1,Domestic hot water
+DHW-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Domestic hot water
+DHW-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Domestic hot water
+DHW-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Domestic hot water
+DHW-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Domestic hot water
+DHW-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Domestic hot water
+DHW-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Domestic hot water
+DHW-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Domestic hot water
+DHW-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Domestic hot water
+DHW-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Domestic hot water
+DHW-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Domestic hot water
+DHW-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Domestic hot water
+DHW-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Domestic hot water
+DHW-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Domestic hot water
+DHW-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Domestic hot water
+DHW-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Domestic hot water
+DHW-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Domestic hot water
+DHW-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Domestic hot water
+DHW-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Domestic hot water
+DHW-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Domestic hot water
+DHW-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Domestic hot water
+DHW-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Domestic hot water
+C-1a,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Cooling
+C-1a,level 1,Central automatic control,1,0,1,1,1,0,0,1,0,Cooling
+C-1a,level 2,Individual room control,1,0,1,2,2,0,0,2,0,Cooling
+C-1a,level 3,Individual room control with communication between controllers and to BACS,2,0,2,3,2,1,0,3,0,Cooling
+C-1a,level 4,Individual room control with communication and occupancy detection,3,0,2,3,2,1,0,4,0,Cooling
+C-1b,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Cooling
+C-1b,level 1,Central automatic control,1,0,1,1,1,0,0,1,0,Cooling
+C-1b,level 2,Advanced central automatic control,1,0,1,1,2,0,0,2,0,Cooling
+C-1b,level 3,Advanced central automatic control with intermittent operation and/or room temperature feedback control,2,0,2,3,2,1,1,3,0,Cooling
+C-1c,level 0,Constant temperature control,0,0,0,0,0,0,0,0,0,Cooling
+C-1c,level 1,Outside temperature compensated control,1,0,1,1,0,0,0,1,0,Cooling
+C-1c,level 2,Demand based control,2,0,1,1,0,0,0,2,0,Cooling
+C-1d,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Cooling
+C-1d,level 1,On off control,1,0,0,0,0,0,0,1,0,Cooling
+C-1d,level 2,Multi-Stage control,2,0,0,0,0,0,0,2,0,Cooling
+C-1d,level 3,Variable speed pump control (pump unit (internal) estimations),2,0,0,0,0,0,0,3,0,Cooling
+C-1d,level 4,Variable speed pump control (external demand signal),2,0,0,0,0,0,0,4,0,Cooling
+C-1f,level 0,No interlock,0,0,0,0,0,0,0,0,1,Cooling
+C-1f,level 1,Partial interlock (minimising risk of simultanieus heating and cooling e.g. by sliding setpoints),2,0,0,0,0,0,0,1,1,Cooling
+C-1f,level 2,Total interlock (control system ensures no  simultaneous heating and cooling can take place),3,0,0,0,0,0,0,2,1,Cooling
+C-1g,level 0,Continuous storage operation,0,0,0,0,0,0,0,0,0,Cooling
+C-1g,level 1,Time-scheduled storage operation,1,0,0,0,0,0,0,1,0,Cooling
+C-1g,level 2,Load prediction based storage operation,2,1,0,0,0,0,0,2,0,Cooling
+C-1g,level 3,Cold storage capable of flexible control through grid signals (e.g. DSM) ,2,2,0,0,0,0,0,3,0,Cooling
+C-2a,level 0,On/Off-control of cooling production,0,0,0,0,0,0,0,0,1,Cooling
+C-2a,level 1,Multi-stage control of  cooling production capacity depending on the load or demand (e.g. on/off of several compressors),1,1,1,0,0,0,0,1,1,Cooling
+C-2a,level 2,"Variable control of  cooling production capacity depending on the load or demand (e.g. hot gas bypass, inverter frequency control)",2,1,2,0,0,0,0,2,1,Cooling
+C-2a,level 3,Variable control of  cooling production capacity depending on the load AND external signals from grid,2,3,2,0,0,0,0,3,1,Cooling
+C-2b,level 0,Priorities only based on running times,0,0,0,0,0,0,0,0,0,Cooling
+C-2b,level 1,Fixed sequencing based on loads only: e.g. depending on the generators characteristics such as absorption chiller vs. centrifugal chiller,1,0,0,0,0,0,0,1,0,Cooling
+C-2b,level 2,Dynamic priorities based on generator efficiency and characteristics (e.g. availability of free cooling),2,1,0,0,0,0,0,2,0,Cooling
+C-2b,level 3,Load prediction based sequencing: the sequence is based on e.g. COP and available power of a device and the predicted required power,3,2,0,0,0,0,0,3,0,Cooling
+C-2b,level 4,"Sequencing based on dynamic priority list, including external signals from grid",3,3,0,0,0,0,0,4,0,Cooling
+C-3,level 0,None,0,0,0,0,0,0,0,0,1,Cooling
+C-3,level 1,"Central or remote reporting of current performance KPIs (e.g. temperatures, submetering energy usage)",1,0,0,0,0,1,1,1,1,Cooling
+C-3,level 2,Central or remote reporting of current performance KPIs and historical data,1,0,0,0,0,1,2,2,1,Cooling
+C-3,level 3,Central or remote reporting of performance evaluation including forecasting and/or benchmarking,1,0,0,0,0,1,3,3,1,Cooling
+C-3,level 4,"Central or remote reporting of performance evaluation including forecasting and/or benchmarking, also including predictive management and fault detection",1,0,0,1,0,3,3,4,1,Cooling
+C-4,level 0,No automatic control,0,0,0,0,0,0,0,0,1,Cooling
+C-4,level 1,Scheduled operation of cooling system,1,0,1,1,0,0,0,1,1,Cooling
+C-4,level 2,Self-learning optimal control of cooling system,2,1,2,2,0,0,0,2,1,Cooling
+C-4,level 3,Cooling system capable of flexible control through grid signals (e.g. DSM) ,2,3,2,3,0,0,0,3,1,Cooling
+C-4,level 4,Optimized control of  cooling system based on local predictions and grid signals (e.g. through model predictive control),2,3,3,3,1,0,0,4,1,Cooling
+C-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Cooling
+C-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Cooling
+C-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Cooling
+C-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Cooling
+C-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Cooling
+C-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Cooling
+C-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Cooling
+C-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Cooling
+C-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Cooling
+C-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Cooling
+C-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Cooling
+C-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Cooling
+C-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Cooling
+C-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Cooling
+C-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Cooling
+C-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Cooling
+C-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Cooling
+C-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Cooling
+C-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Cooling
+C-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Cooling
+C-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Cooling
+C-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Cooling
+C-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Cooling
+C-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Cooling
+C-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Cooling
+V-1a,level 0,No ventilation system or manual control,0,0,0,0,0,0,0,0,1,Ventilation
+V-1a,level 1,Clock control,1,0,1,1,1,0,0,1,1,Ventilation
+V-1a,level 2,Occupancy detection control,1,0,2,2,2,0,0,2,1,Ventilation
+V-1a,level 3,"Central Demand Control based on air quality sensors (CO2, VOC, humidity, ...)",2,0,3,3,3,0,0,3,1,Ventilation
+V-1a,level 4,"Local Demand Control based on air quality sensors (CO2, VOC,...) with local flow from/to the zone regulated by dampers",3,0,3,3,3,0,0,4,1,Ventilation
+V-1c,level 0,No automatic control: Continuously supplies of air flow for a maximum load of all rooms,0,0,0,0,0,0,0,0,0,Ventilation
+V-1c,level 1,On off time control: Continuously supplies of air flow for a maximum load of all rooms during nominal occupancy time,1,0,0,0,0,0,0,1,0,Ventilation
+V-1c,level 2,Multi-stage control: To reduce the auxiliary energy demand of the fan,2,0,0,0,0,0,0,2,0,Ventilation
+V-1c,level 3,Automatic flow or pressure control without pressure reset: Load dependent supplies of air flow for the demand of all connected rooms.,3,0,0,0,0,0,0,3,0,Ventilation
+V-1c,level 4,Automatic flow or pressure control with pressure reset: Load dependent supplies of air flow for the demand of all connected rooms (for variable air volume systems with VFD).,3,0,0,0,0,0,0,4,0,Ventilation
+V-2c,level 0,Without overheating control,0,0,0,0,0,0,0,0,0,Ventilation
+V-2c,level 1,Modulate or bypass heat recovery based on sensors in air exhaust,1,0,1,1,1,0,0,1,0,Ventilation
+V-2c,level 2,Modulate or bypass heat recovery based on multiple room temperature sensors or predictive control,2,0,2,2,2,0,0,2,0,Ventilation
+V-2d,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Ventilation
+V-2d,level 1,"Constant setpoint: A control loop enables to control the supply air temperature, the setpoint is constant and can only be modified by a manual action",1,0,1,1,0,0,0,1,0,Ventilation
+V-2d,level 2,Variable set point with outdoor temperature compensation,2,0,2,1,0,0,0,2,0,Ventilation
+V-2d,level 3,Variable set point with load dependant compensation. A control loop enables to control the supply air temperature. The setpoint is defined as a function of the loads in the room,3,0,2,1,0,0,0,3,0,Ventilation
+V-3,level 0,No automatic control,0,0,0,0,0,0,0,0,0,Ventilation
+V-3,level 1,Night cooling,1,0,3,2,1,0,0,1,0,Ventilation
+V-3,level 2,Free cooling: air flows modulated during all periods of time to minimize the amount of mechanical cooling,2,0,3,2,1,0,0,2,0,Ventilation
+V-3,level 3,"H,x- directed control: The amount of outside air and recirculation air are modulated during all periods of time to minimize the amount of mechanical cooling. Calculation is performed on the basis of temperatures and humidity (enthalpy).",3,0,3,2,1,0,0,3,0,Ventilation
+V-6,level 0,None,0,0,0,0,0,0,0,0,1,Ventilation
+V-6,level 1,Air quality sensors (e.g. CO2) and real time autonomous monitoring,0,0,0,0,2,1,1,1,1,Ventilation
+V-6,level 2,Real time monitoring & historical information of IAQ available to occupants,0,0,0,0,3,1,2,2,1,Ventilation
+V-6,level 3,Real time monitoring & historical information of IAQ available to occupants + warning on maintenance needs or occupant actions (e.g. window opening),0,0,0,0,3,2,3,3,1,Ventilation
+V-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Ventilation
+V-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Ventilation
+V-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Ventilation
+V-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Ventilation
+V-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Ventilation
+V-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Ventilation
+V-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Ventilation
+V-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Ventilation
+V-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Ventilation
+V-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Ventilation
+V-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Ventilation
+V-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Ventilation
+V-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Ventilation
+V-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Ventilation
+V-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Ventilation
+V-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Ventilation
+V-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Ventilation
+V-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Ventilation
+V-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Ventilation
+V-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Ventilation
+V-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Ventilation
+V-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Ventilation
+V-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Ventilation
+V-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Ventilation
+V-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Ventilation
+L-1a,level 0,Manual on/off switch,0,0,0,0,0,0,0,0,1,Lighting
+L-1a,level 1,Manual on/off switch + additional sweeping extinction signal,1,0,1,1,0,0,0,1,1,Lighting
+L-1a,level 2,Automatic detection (auto on / dimmed or auto off),2,0,2,2,0,0,0,2,1,Lighting
+L-1a,level 3,Automatic detection (manual on / dimmed or auto off),3,0,2,2,0,0,0,3,1,Lighting
+L-2,level 0,Manual (central),0,0,0,0,0,0,0,0,1,Lighting
+L-2,level 1,Manual (per room / zone),1,0,1,1,0,0,0,1,1,Lighting
+L-2,level 2,Automatic switching,2,0,1,1,1,0,0,2,1,Lighting
+L-2,level 3,Automatic dimming,3,0,2,2,2,0,0,3,1,Lighting
+L-2,level 4,"Automatic dimming including scene-based light control (during time intervals, dynamic and adapted lighting scenes are set, for example, in terms of illuminance level, different correlated colour temperature (CCT) and the possibility to change the light distribution within the space according to e. g. design, human needs, visual tasks)",3,0,3,3,3,0,0,4,1,Lighting
+L-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Lighting
+L-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Lighting
+L-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Lighting
+L-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Lighting
+L-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Lighting
+L-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Lighting
+L-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Lighting
+L-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Lighting
+L-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Lighting
+L-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Lighting
+L-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Lighting
+L-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Lighting
+L-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Lighting
+L-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Lighting
+L-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Lighting
+L-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Lighting
+L-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Lighting
+L-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Lighting
+L-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Lighting
+L-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Lighting
+L-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Lighting
+L-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Lighting
+L-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Lighting
+L-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Lighting
+L-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Lighting
+DE-1,level 0,No sun shading or only manual operation,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-1,level 1,Motorized operation with manual control,1,0,1,1,0,0,0,1,0,Dynamic building envelope
+DE-1,level 2,Motorized operation with automatic control based on sensor data,2,0,1,2,1,0,0,2,0,Dynamic building envelope
+DE-1,level 3,Combined light/blind/HVAC control,3,0,2,3,2,0,0,3,0,Dynamic building envelope
+DE-1,level 4,Predictive blind control (e.g. based on weather forecast),3,0,3,3,3,0,0,4,0,Dynamic building envelope
+DE-2,level 0,Manual operation or only fixed windows,0,0,0,0,0,0,0,0,1,Dynamic building envelope
+DE-2,level 1,Open/closed detection to shut down heating or cooling systems,2,0,1,1,0,0,0,1,1,Dynamic building envelope
+DE-2,level 2,Level 1 + Automised mechanical window opening based on room sensor data,2,0,2,1,1,0,0,2,1,Dynamic building envelope
+DE-2,level 3,"Level 2 + Centralized coordination of operable windows, e.g. to control free natural night cooling",2,0,2,2,1,0,0,3,1,Dynamic building envelope
+DE-4,level 0,No reporting,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-4,level 1,Position of each product & fault detection,0,0,0,0,0,1,1,1,0,Dynamic building envelope
+DE-4,level 2,"Position of each product, fault detection & predictive maintenance",0,0,0,0,0,1,2,2,0,Dynamic building envelope
+DE-4,level 3,"Position of each product, fault detection, predictive maintenance, real-time sensor data (wind, lux, temperature)",0,0,0,0,0,1,3,3,0,Dynamic building envelope
+DE-4,level 4,"Position of each product, fault detection, predictive maintenance, real-time & historical sensor data (wind, lux, temperature)",0,0,0,1,0,2,3,4,0,Dynamic building envelope
+DE-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Dynamic building envelope
+DE-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Dynamic building envelope
+DE-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Dynamic building envelope
+DE-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Dynamic building envelope
+DE-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Dynamic building envelope
+DE-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Dynamic building envelope
+DE-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Dynamic building envelope
+DE-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Dynamic building envelope
+DE-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Dynamic building envelope
+DE-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Dynamic building envelope
+DE-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Dynamic building envelope
+DE-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Dynamic building envelope
+DE-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Dynamic building envelope
+DE-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Dynamic building envelope
+DE-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Dynamic building envelope
+DE-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Dynamic building envelope
+DE-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Dynamic building envelope
+DE-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Dynamic building envelope
+DE-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Dynamic building envelope
+DE-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Dynamic building envelope
+DE-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Dynamic building envelope
+E-2,level 0,None,0,0,0,0,0,0,0,0,0,Electricity
+E-2,level 1,Current generation data available,1,0,0,0,0,1,1,1,0,Electricity
+E-2,level 2,Actual values and historical data,1,0,0,0,0,1,2,2,0,Electricity
+E-2,level 3,Performance evaluation including forecasting and/or benchmarking,1,0,0,0,0,1,3,3,0,Electricity
+E-2,level 4,"Performance evaluation including forecasting and/or benchmarking, also including predictive management and fault detection",1,0,0,1,0,2,3,4,0,Electricity
+E-3,level 0,None,0,0,0,0,0,0,0,0,0,Electricity
+E-3,level 1,On site storage of electricity (e.g. electric battery),0,1,0,2,0,0,0,1,0,Electricity
+E-3,level 2,On site storage of energy (e.g. electric battery or thermal storage) with controller based on grid signals,0,2,0,2,0,0,0,2,0,Electricity
+E-3,level 3,On site storage of energy (e.g. electric battery or thermal storage) with controller optimising the use of locally generated electricity,0,2,0,2,0,0,0,3,0,Electricity
+E-3,level 4,On site storage of energy (e.g. electric battery or thermal storage) with controller optimising the use of locally generated electricity and possibility to feed back into the grid,0,3,0,2,0,0,0,4,0,Electricity
+E-4,level 0,None,0,0,0,0,0,0,0,0,0,Electricity
+E-4,level 1,"Scheduling electricity consumption (plug loads, white goods, etc.)",0,1,0,1,0,0,0,1,0,Electricity
+E-4,level 2,Automated management of local electricity consumption based on current renewable energy availability,0,2,0,2,0,0,0,2,0,Electricity
+E-4,level 3,Automated management of local electricity consumption based on current and predicted energy needs and renewable energy availability,0,3,0,2,0,0,0,3,0,Electricity
+E-5,level 0,CHP control based on scheduled runtime management and/or current heat energy demand,0,0,0,0,0,0,0,0,0,Electricity
+E-5,level 1,"CHP runtime control influenced by the fluctuating availability of RES, overproduction will be fed into the grid",1,1,0,1,0,0,0,1,0,Electricity
+E-5,level 2,"CHP runtime control influenced by the fluctuating availability of RES and grid signals, dynamic charging and runtime control to optimise self-consumption of renewables",2,2,0,1,0,0,0,2,0,Electricity
+E-8,level 0,None,0,0,0,0,0,0,0,0,0,Electricity
+E-8,level 1,Automated management of (building-level) electricity consumption based on grid signals,0,2,0,2,0,0,0,1,0,Electricity
+E-8,level 2,Automated management of (building-level) electricity consumption and electricity supply to neighbouring buildings (microgrid) or grid,0,2,0,2,0,0,0,2,0,Electricity
+E-8,level 3,"Automated management of (building-level) electricity consumption and supply, with potential to continue limited off-grid operation (island mode)",0,3,0,3,0,0,0,3,0,Electricity
+E-11,level 0,None,0,0,0,0,0,0,0,0,0,Electricity
+E-11,level 1,Current state of charge (SOC) data available,1,0,0,0,0,1,1,1,0,Electricity
+E-11,level 2,Actual values and historical data,1,0,0,0,0,1,2,2,0,Electricity
+E-11,level 3,Performance evaluation including forecasting and/or benchmarking,1,0,0,0,0,1,3,3,0,Electricity
+E-11,level 4,"Performance evaluation including forecasting and/or benchmarking, also including predictive management and fault detection",1,0,0,1,0,2,3,4,0,Electricity
+E-12,level 0,None,0,0,0,0,0,0,0,0,1,Electricity
+E-12,level 1,reporting on current electricity consumption on building level,0,0,0,0,0,0,1,1,1,Electricity
+E-12,level 2,real-time feedback or benchmarking on building level,1,0,0,0,0,0,2,2,1,Electricity
+E-12,level 3,real-time feedback or benchmarking on appliance level,2,0,0,0,0,1,3,3,1,Electricity
+E-12,level 4,real-time feedback or benchmarking on appliance level with automated personalized recommendations,3,0,0,1,0,2,3,4,1,Electricity
+E-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electricity
+E-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electricity
+E-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electricity
+E-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electricity
+E-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electricity
+E-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electricity
+E-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electricity
+E-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electricity
+E-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electricity
+E-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electricity
+E-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electricity
+E-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electricity
+E-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electricity
+E-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electricity
+E-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electricity
+E-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electricity
+E-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electricity
+E-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electricity
+E-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electricity
+E-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electricity
+E-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electricity
+E-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electricity
+E-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electricity
+E-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electricity
+E-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electricity
+EV-15,level 0,not present,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-15,level 1,ducting (or simple power plug) available,0,0,0,1,0,0,0,1,0,Electric vehicle charging
+EV-15,level 2,0-9% of parking spaces has recharging points,0,0,0,2,0,0,0,2,0,Electric vehicle charging
+EV-15,level 3,10-50% or parking spaces has recharging point,0,0,0,3,0,0,0,3,0,Electric vehicle charging
+EV-15,level 4,>50% of parking spaces has recharging point,0,0,0,3,0,0,0,4,0,Electric vehicle charging
+EV-16,level 0,Not present (uncontrolled charging),0,-2,0,0,0,0,0,0,0,Electric vehicle charging
+EV-16,level 1,1-way controlled charging (e.g. including desired departure time and grid signals for optimization),0,1,0,2,0,0,0,1,0,Electric vehicle charging
+EV-16,level 2,2-way controlled charging (e.g. including desired departure time and grid signals for optimization),0,3,0,2,0,0,0,2,0,Electric vehicle charging
+EV-17,level 0,No information available,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-17,level 1,Reporting information on EV charging status to occupant,0,0,0,1,0,0,2,1,0,Electric vehicle charging
+EV-17,level 2,Reporting information on EV charging status to occupant AND automatic identification and authorizition of the driver to the charging station (ISO 15118 compliant),0,1,0,1,0,0,3,2,0,Electric vehicle charging
+EV-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electric vehicle charging
+EV-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electric vehicle charging
+EV-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electric vehicle charging
+EV-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electric vehicle charging
+EV-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electric vehicle charging
+EV-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electric vehicle charging
+EV-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electric vehicle charging
+EV-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electric vehicle charging
+EV-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electric vehicle charging
+EV-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electric vehicle charging
+EV-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electric vehicle charging
+EV-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electric vehicle charging
+EV-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electric vehicle charging
+EV-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electric vehicle charging
+EV-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electric vehicle charging
+EV-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electric vehicle charging
+EV-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Electric vehicle charging
+EV-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Electric vehicle charging
+EV-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Electric vehicle charging
+EV-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Electric vehicle charging
+EV-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Electric vehicle charging
+MC-3,level 0,Manual setting ,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-3,level 1,Runtime setting of heating and cooling plants following a predefined time schedule ,1,1,1,1,0,0,0,1,1,Monitoring and control
+MC-3,level 2,Heating and cooling plant on/off control based on building loads,2,1,2,2,1,0,0,2,1,Monitoring and control
+MC-3,level 3,Heating and cooling plant on/off control based on predictive control or grid signals,3,2,2,3,1,0,0,3,1,Monitoring and control
+MC-4,level 0,No central indication of detected faults and alarms,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-4,level 1,With central indication of detected faults and alarms for at least 2 relevant TBS,0,0,0,1,1,1,1,1,1,Monitoring and control
+MC-4,level 2,With central indication of detected faults and alarms for all relevant TBS,0,0,0,2,2,2,2,2,1,Monitoring and control
+MC-4,level 3,"With central indication of detected faults and alarms for all relevant TBS, including diagnosing functions",0,0,0,3,3,3,3,3,1,Monitoring and control
+MC-9,level 0,None,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-9,level 1,"Occupancy detection for individual functions, e.g. lighting",1,0,1,1,0,1,0,1,1,Monitoring and control
+MC-9,level 2,Centralised occupant detection which feeds in to several TBS such as lighting and heating,1,0,1,1,0,2,0,2,1,Monitoring and control
+MC-13,level 0,None,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-13,level 1,Central or remote reporting of realtime energy use per energy carrier,1,0,0,1,0,1,1,1,1,Monitoring and control
+MC-13,level 2,"Central or remote reporting of realtime energy use per energy carrier, combining TBS of at least 2 domains in one interface",1,0,0,2,0,2,2,2,1,Monitoring and control
+MC-13,level 3,"Central or remote reporting of realtime energy use per energy carrier, combining TBS of all main domains in one interface",1,0,0,3,0,3,3,3,1,Monitoring and control
+MC-25,level 0,"None - No harmonization between grid and TBS, building is operated independently from the grid load",0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-25,level 1,"Demand side management possible for (some) individual TBS, but not coordinated over various domains",0,2,0,0,0,0,0,1,1,Monitoring and control
+MC-25,level 2,Coordinated demand side management of multiple TBS,1,3,0,1,0,0,0,2,1,Monitoring and control
+MC-28,level 0,None,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-28,level 1,"Reporting information on current DSM status, including managed energy flows",0,1,0,0,0,0,2,1,1,Monitoring and control
+MC-28,level 2,"Reporting information on currenthistorical and predicted DSM status, including managed energy flows",0,2,0,0,0,1,3,2,1,Monitoring and control
+MC-29,level 0,No DSM control,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-29,level 1,DSM control without the possibility to override this control by the building user (occupant or facility manager),0,3,-2,0,0,-1,-2,1,1,Monitoring and control
+MC-29,level 2,Manual override and reactivation of DSM control by the building user ,0,1,0,1,0,0,0,2,1,Monitoring and control
+MC-29,level 3,Scheduled override of DSM control (and reactivation) by the building user ,0,1,0,2,0,1,0,3,1,Monitoring and control
+MC-29,level 4,Scheduled override of DSM control and reactivation with optimised control,0,2,0,3,0,1,0,4,1,Monitoring and control
+MC-30,level 0,None,0,0,0,0,0,0,0,0,1,Monitoring and control
+MC-30,level 1,Single platform that allows manual control of multiple TBS,0,0,0,1,0,1,0,1,1,Monitoring and control
+MC-30,level 2,Single platform that allows automated control & coordination between TBS,1,0,0,2,0,1,0,2,1,Monitoring and control
+MC-30,level 3,"Single platform that allows automated control & coordination between TBS + optimization of energy flow based on occupancy, weather and grid signals",2,0,0,3,0,1,0,3,1,Monitoring and control
+MC-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Monitoring and control
+MC-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Monitoring and control
+MC-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Monitoring and control
+MC-E1,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Monitoring and control
+MC-E1,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Monitoring and control
+MC-E2,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Monitoring and control
+MC-E2,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Monitoring and control
+MC-E2,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Monitoring and control
+MC-E2,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Monitoring and control
+MC-E2,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Monitoring and control
+MC-E3,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Monitoring and control
+MC-E3,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Monitoring and control
+MC-E3,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Monitoring and control
+MC-E3,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Monitoring and control
+MC-E3,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Monitoring and control
+MC-E4,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Monitoring and control
+MC-E4,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Monitoring and control
+MC-E4,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Monitoring and control
+MC-E4,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Monitoring and control
+MC-E4,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Monitoring and control
+MC-E5,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Monitoring and control
+MC-E5,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Monitoring and control
+MC-E5,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Monitoring and control
+MC-E5,level 3,User defined level 1-3,0,0,0,0,0,0,0,3,0,Monitoring and control
+MC-E5,level 4,User defined level 1-4,0,0,0,0,0,0,0,4,0,Monitoring and control

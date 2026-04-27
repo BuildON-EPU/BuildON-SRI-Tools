@@ -1,0 +1,91 @@
+building_type,zone,domain,dw_cr1,dw_cr2,dw_cr3,dw_cr4,dw_cr5,dw_cr6,dw_cr7
+Residential,"North Europe",Heating,0.299090511,0.426728885,0.16,0.1,0.16,0.314597072,0.114285714
+Residential,"North Europe","Domestic hot water",0.092805265,0.132410377,0,0.1,0,0.09761682,0.114285714
+Residential,"North Europe",Cooling,0,0,0.16,0.1,0.16,0,0.114285714
+Residential,"North Europe",Ventilation,0.187363947,0,0.16,0.1,0.16,0.197077965,0.114285714
+Residential,"North Europe",Lighting,0.03696767,0,0.16,0.1,0.16,0,0
+Residential,"North Europe",Electricity,0.133772607,0.190860738,0,0.1,0,0.140708143,0.114285714
+Residential,"North Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Residential,"North Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Residential,"North Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Residential,"West Europe",Heating,0.339668015,0.457215993,0.16,0.1,0.16,0.346434729,0.114285714
+Residential,"West Europe","Domestic hot water",0.07621044,0.102584378,0,0.1,0,0.07772867,0.114285714
+Residential,"West Europe",Cooling,0.030389312,0.040906058,0.16,0.1,0.16,0.030994715,0.114285714
+Residential,"West Europe",Ventilation,0.178171975,0,0.16,0.1,0.16,0.181721438,0.114285714
+Residential,"West Europe",Lighting,0.014649327,0,0.16,0.1,0.16,0,0
+Residential,"West Europe",Electricity,0.11091093,0.149293571,0,0.1,0,0.113120448,0.114285714
+Residential,"West Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Residential,"West Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Residential,"West Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Residential,"South Europe",Heating,0.316664041,0.376243256,0.16,0.1,0.16,0.328404652,0.114285714
+Residential,"South Europe","Domestic hot water",0.099794349,0.118570302,0,0.1,0,0.103494317,0.114285714
+Residential,"South Europe",Cooling,0.068808755,0.081754877,0.16,0.1,0.16,0.071359902,0.114285714
+Residential,"South Europe",Ventilation,0.091951853,0,0.16,0.1,0.16,0.095361053,0.114285714
+Residential,"South Europe",Lighting,0.02681283,0,0.16,0.1,0.16,0,0
+Residential,"South Europe",Electricity,0.145968172,0.173431565,0,0.1,0,0.151380076,0.114285714
+Residential,"South Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Residential,"South Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Residential,"South Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Residential,"North-East Europe",Heating,0.303829758,0.411719277,0.16,0.1,0.16,0.306363139,0.114285714
+Residential,"North-East Europe","Domestic hot water",0.139276802,0.188733799,0,0.1,0,0.140438115,0.114285714
+Residential,"North-East Europe",Cooling,0,0,0.16,0.1,0.16,0,0.114285714
+Residential,"North-East Europe",Ventilation,0.190332828,0,0.16,0.1,0.16,0.191919854,0.114285714
+Residential,"North-East Europe",Lighting,0.006201907,0,0.16,0.1,0.16,0,0
+Residential,"North-East Europe",Electricity,0.110358704,0.149546924,0,0.1,0,0.111278892,0.114285714
+Residential,"North-East Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Residential,"North-East Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Residential,"North-East Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Residential,"South-East Europe",Heating,0.206205389,0.244382451,0.16,0.1,0.16,0.208709733,0.114285714
+Residential,"South-East Europe","Domestic hot water",0.058031812,0.068775876,0,0.1,0,0.058736602,0.114285714
+Residential,"South-East Europe",Cooling,0.146592735,0.173733054,0.16,0.1,0.16,0.14837309,0.114285714
+Residential,"South-East Europe",Ventilation,0.108164502,0,0.16,0.1,0.16,0.109478149,0.114285714
+Residential,"South-East Europe",Lighting,0.00899938,0,0.16,0.1,0.16,0,0
+Residential,"South-East Europe",Electricity,0.222006183,0.263108618,0,0.1,0,0.224702426,0.114285714
+Residential,"South-East Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Residential,"South-East Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Residential,"South-East Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Non-Residential,"North Europe",Heating,0.313218936,0.493837245,0.16,0.1,0.16,0.349623516,0.114285714
+Non-Residential,"North Europe","Domestic hot water",0.053686299,0.084644608,0,0.1,0,0.059926111,0.114285714
+Non-Residential,"North Europe",Cooling,0.093696188,0.147726277,0.16,0.1,0.16,0.104586239,0.114285714
+Non-Residential,"North Europe",Ventilation,0.196214638,0,0.16,0.1,0.16,0.219020128,0.114285714
+Non-Residential,"North Europe",Lighting,0.078093818,0,0.16,0.1,0.16,0,0
+Non-Residential,"North Europe",Electricity,0.015090122,0.02379187,0,0.1,0,0.016844006,0.114285714
+Non-Residential,"North Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Non-Residential,"North Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Non-Residential,"North Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Non-Residential,"West Europe",Heating,0.272780872,0.406622232,0.16,0.1,0.16,0.316587776,0.114285714
+Non-Residential,"West Europe","Domestic hot water",0.082584979,0.123105731,0,0.1,0,0.095847611,0.114285714
+Non-Residential,"West Europe",Cooling,0.126701526,0.188868291,0.16,0.1,0.16,0.147048999,0.114285714
+Non-Residential,"West Europe",Ventilation,0.143086498,0,0.16,0.1,0.16,0.166065296,0.114285714
+Non-Residential,"West Europe",Lighting,0.103779048,0,0.16,0.1,0.16,0,0
+Non-Residential,"West Europe",Electricity,0.021067076,0.031403747,0,0.1,0,0.024450317,0.114285714
+Non-Residential,"West Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Non-Residential,"West Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Non-Residential,"West Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Non-Residential,"South Europe",Heating,0.301977422,0.417460186,0.16,0.1,0.16,0.359375229,0.114285714
+Non-Residential,"South Europe","Domestic hot water",0.107271979,0.148295128,0,0.1,0,0.127661505,0.114285714
+Non-Residential,"South Europe",Cooling,0.117432153,0.162340774,0.16,0.1,0.16,0.139752855,0.114285714
+Non-Residential,"South Europe",Ventilation,0.087687201,0,0.16,0.1,0.16,0.104354186,0.114285714
+Non-Residential,"South Europe",Lighting,0.119786652,0,0.16,0.1,0.16,0,0
+Non-Residential,"South Europe",Electricity,0.015844593,0.021903911,0,0.1,0,0.018856225,0.114285714
+Non-Residential,"South Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Non-Residential,"South Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Non-Residential,"South Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Non-Residential,"North-East Europe",Heating,0.292478128,0.444277121,0.16,0.1,0.16,0.324032703,0.114285714
+Non-Residential,"North-East Europe","Domestic hot water",0.093878306,0.14260206,0,0.1,0,0.104006551,0.114285714
+Non-Residential,"North-East Europe",Cooling,0.083877652,0.127410968,0.16,0.1,0.16,0.092926956,0.114285714
+Non-Residential,"North-East Europe",Ventilation,0.183221649,0,0.16,0.1,0.16,0.202988875,0.114285714
+Non-Residential,"North-East Europe",Lighting,0.073035627,0,0.16,0.1,0.16,0,0
+Non-Residential,"North-East Europe",Electricity,0.023508639,0.035709851,0,0.1,0,0.026044914,0.114285714
+Non-Residential,"North-East Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Non-Residential,"North-East Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Non-Residential,"North-East Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Non-Residential,"South-East Europe",Heating,0.287063086,0.421843249,0.16,0.1,0.16,0.325738701,0.114285714
+Non-Residential,"South-East Europe","Domestic hot water",0.115722726,0.170056175,0,0.1,0,0.131313889,0.114285714
+Non-Residential,"South-East Europe",Cooling,0.074585728,0.109604778,0.16,0.1,0.16,0.084634561,0.114285714
+Non-Residential,"South-East Europe",Ventilation,0.150578197,0,0.16,0.1,0.16,0.17086539,0.114285714
+Non-Residential,"South-East Europe",Lighting,0.089049016,0,0.16,0.1,0.16,0,0
+Non-Residential,"South-East Europe",Electricity,0.033001247,0.048495797,0,0.1,0,0.03744746,0.114285714
+Non-Residential,"South-East Europe","Dynamic building envelope",0.05,0,0.16,0.1,0.16,0.05,0.114285714
+Non-Residential,"South-East Europe","Electric vehicle charging",0,0.05,0,0.1,0,0,0.114285714
+Non-Residential,"South-East Europe","Monitoring and control",0.2,0.2,0.2,0.2,0.2,0.2,0.2
